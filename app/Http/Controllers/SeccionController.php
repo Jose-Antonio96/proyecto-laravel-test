@@ -14,6 +14,10 @@ public function create(){
 		return view('seccion.create');
 }
 
+public function usuario(){
+  return view('seccion.usuario');
+}
+
 public function show($seccion, $subseccion=null){
     if($subseccion){
 		return view("seccion.show", ['seccion' => $seccion, 'subseccion' => $subseccion]);

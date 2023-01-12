@@ -3,12 +3,13 @@
 <head>
 	<meta charset=”UTF-8”>
 	<meta name viewport content=”width-device-width, initial-scale-1.0”>
-	<title>Titulo</title>
+	<title>Perfil de @yield('usuario')</title>
 </head>
 <body>
-	<h1>Bienvenidos a la page principal</h1>
-	@extends('seccion.plantilla')
-	@section('content')
+	<h1>Nombre: @yield('nombre')</h1>
+    @yield ('content', "Gracias por su visita")
 
 </body>
 </html>
+
+

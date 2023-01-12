@@ -30,8 +30,21 @@ Route::get('miruta/{seccion}/{categoria?}', function($seccion, $categoria=null){
 });
 */
 
-Route::get("/", HomeController::class);
+//Route::get("/", HomeController::class);
+Route::get("/", [HomeController::class, 'index']);
+Route::get("/usuario", [SeccionController::class, 'usuario']);
 Route::get("/home", [SeccionController::class, 'index']);
 Route::get("/seccion/nuevo", [SeccionController::class, 'create']);
-Route::get("/seccion/{seccion}/{subseccion?}", [SeccionController::class, 'show']);
+//Route::get("/seccion/{seccion}/{subseccion?}", [SeccionController::class, 'show']);
 //Ejemplo: /seccion/deportes/(Aquí es opcional)
+Route::get("blog/{seccion}/{subseccion?}", function ($seccion, $subseccion = null) {
+    if($subseccion)
+        return "esta es la subseccion $subseccion de la seccion $seccion del blog";
+    else
+        return "esta es la seccion $seccion del blog";
+});
+
+Route::get("/{seccion}", function ($seccion) {
+    
+        return "esta es la seccion $seccion del blog";
+});
