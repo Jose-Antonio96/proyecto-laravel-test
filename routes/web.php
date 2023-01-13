@@ -31,6 +31,7 @@ Route::get('miruta/{seccion}/{categoria?}', function($seccion, $categoria=null){
 */
 
 //Route::get("/", HomeController::class);
+/*
 Route::get("/", [HomeController::class, 'index']);
 Route::get("/usuario", [SeccionController::class, 'usuario']);
 Route::get("/home", [SeccionController::class, 'index']);
@@ -48,3 +49,14 @@ Route::get("/{seccion}", function ($seccion) {
     
         return "esta es la seccion $seccion del blog";
 });
+*/
+
+/*
+Route::get("/", MainPageController::class);
+Route::get("/home" , [HomeController::class, 'index']);
+Route::get("/searchpage" , [SearchPageController::class, 'search']);
+Route::get("/searchpage/{nomviaje?}", function ($nomviaje = null) {
+    return "Este es el $nomviaje";
+});
+Route::get("/account/{nomcuenta}", [AccountController::class, 'account']);
+*/
