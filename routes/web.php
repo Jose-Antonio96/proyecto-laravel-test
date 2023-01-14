@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\SeccionController;
+use App\Http\Controllers\SearchPageController;
+use App\Http\Controllers\AccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,19 +19,18 @@ use App\Http\Controllers\SeccionController;
 */
 
 /*
-Route::get('/', HomeController::class () {
-    return view('una nueva ruta, hurray!');
+Route::get("/", function(){
+    return "una nueva ruta, hurray!";
 });
 */
 
-/*
 Route::get('miruta/{seccion}/{categoria?}', function($seccion, $categoria=null){
     if ($categoria)
         return "esta es mi nueva ruta: sección: $seccion y categoría: $categoria";
     else
         return "esta es mi nueva ruta: $seccion";		
 });
-*/
+
 
 //Route::get("/", HomeController::class);
 /*
@@ -51,12 +53,15 @@ Route::get("/{seccion}", function ($seccion) {
 });
 */
 
-/*
-Route::get("/", MainPageController::class);
-Route::get("/home" , [HomeController::class, 'index']);
+
+Route::get("/", [MainPageController::class, 'inicio']);
+
+Route::get("/home" , function(){
+    return view('traveliens/home');
+});
+
 Route::get("/searchpage" , [SearchPageController::class, 'search']);
 Route::get("/searchpage/{nomviaje?}", function ($nomviaje = null) {
-    return "Este es el $nomviaje";
+    return view('traveliens/viaje');
 });
 Route::get("/account/{nomcuenta}", [AccountController::class, 'account']);
-*/

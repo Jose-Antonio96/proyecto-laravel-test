@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class MainPageController extends Controller
 {
-    public function __invoke(){
-        return view();
-    }
+    public function inicio(){
+	    return view('traveliens.mainpage');
+}
+
 }
