@@ -6,9 +6,16 @@
 	<title>Página de inicio</title>
 </head>
 <body>
-	<h1>Bienvenidos a la página de inicio</h1>
-	@extends('seccion.plantilla')
-	@section('content')
+	<h1>Esta es la página de inicio de Traveliens</h1>
 
+	<ul>
+		
+		<li><a href="http://127.0.0.1:8000/searchpage/">Página de búsqueda</a></li>
+		<li><a href="http://127.0.0.1:8000/searchpage/">Cuentas</a></li>
+		<li><a href="http://127.0.0.1:8000/searchpage/">Viaje de ejemplo</a></li>
+	  </ul>
+	  
 </body>
+
+	
 </html>

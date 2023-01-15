@@ -60,8 +60,22 @@ Route::get("/home" , function(){
     return view('traveliens/home');
 });
 
-Route::get("/searchpage" , [SearchPageController::class, 'search']);
-Route::get("/searchpage/{nomviaje?}", function ($nomviaje = null) {
-    return view('traveliens/viaje');
+Route::get("/searchpage/{nomviaje?}", function ($nomviaje = null){
+    if($nomviaje)
+        return "Este es el viaje $nomviaje";
+    else
+        return view('traveliens/searchpage');     
 });
-Route::get("/account/{nomcuenta}", [AccountController::class, 'account']);
+
+
+Route::get("/account/{nomcuenta?}", [AccountController::class, 'account']);
+
+Route::get("/test", function(){
+    return view('traveliens/test');
+});
+
+Route::get('{noexiste?}', function ($noexiste) {
+    if($noexiste)
+    return view('traveliens.404');
+});
+
