@@ -7,8 +7,15 @@
 </head>
 <body>
 	<h1>Bienvenidos a la page principal</h1>
-	@extends('seccion.plantilla')
-	@section('content')
+	<br><br>
+	<ul>
+		@foreach($usuario as $user)
+		<li>{{$user->name}}</li>
+	@endforeach
+	</ul>
+	{{$usuario->links()}}
+	<br><br>
+
 
 </body>
 </html>

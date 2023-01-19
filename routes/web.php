@@ -56,9 +56,7 @@ Route::get("/{seccion}", function ($seccion) {
 
 Route::get("/", [MainPageController::class, 'inicio']);
 
-Route::get("/home" , function(){
-    return view('traveliens/home');
-});
+Route::get("/home", HomeController::class);
 
 Route::get("/searchpage/{nomviaje?}", function ($nomviaje = null){
     if($nomviaje)

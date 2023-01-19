@@ -30,7 +30,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
+        'remember_token', //Identifica la sesion
     ];
 
     /**
@@ -40,5 +40,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        //Esto lo que hace es cambiar la variable a otra, en este caso a un datetime para que la base de datos pueda usarlo
     ];
 }

@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+    
+        /*
        $admin = new User();
        $admin -> name = "Superadmin";
        $admin ->email = "admin@miappcom";
@@ -30,5 +32,10 @@ class DatabaseSeeder extends Seeder
         'email' => 'test',
         'password' => 'passtest'  
         ]);
+        */
+
+        $this->call([UserSeeder::class]);
+        $this->call([ArticlesSeeder::class]);
     }
+    
 }
