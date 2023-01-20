@@ -10,12 +10,14 @@
 	<br><br>
 	<ul>
 		@foreach($usuario as $user)
-		<li>{{$user->name}}</li>
+		<li><a href="{{route('usuarioespecifico', $user->name)}}">{{$user->name}}</a></li>
+		
 	@endforeach
 	</ul>
 	{{$usuario->links()}}
 	<br><br>
-
+	@section('traveliens.home')
+	@yield('title', 'Título de la página')
 
 </body>
 </html>

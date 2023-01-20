@@ -13,8 +13,8 @@
 		<li><a href="http://127.0.0.1:8000/searchpage/">Página de búsqueda</a></li>
 		<li><a href="http://127.0.0.1:8000/searchpage/">Cuentas</a></li>
 		<li><a href="http://127.0.0.1:8000/searchpage/">Viaje de ejemplo</a></li>
+		<li><a href="http://127.0.0.1:8000/home">Vista home</a></li>
 	  </ul>
-	  
 </body>
 
 	

@@ -12,7 +12,10 @@ class HomeController extends Controller
     public function __invoke(){
         //return view('welcome');
         //return "Bienvenido!";
+        
         $usuario = User::paginate(10);
+        
         Return view('traveliens.home', compact('usuario'));
-    }
+    }   
 }
+

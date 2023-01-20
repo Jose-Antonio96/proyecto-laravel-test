@@ -33,9 +33,10 @@ class DatabaseSeeder extends Seeder
         'password' => 'passtest'  
         ]);
         */
-
+        
         $this->call([UserSeeder::class]);
         $this->call([ArticlesSeeder::class]);
+        
     }
     
 }

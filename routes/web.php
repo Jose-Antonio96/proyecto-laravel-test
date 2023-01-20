@@ -6,6 +6,7 @@ use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\SeccionController;
 use App\Http\Controllers\SearchPageController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\DBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,9 @@ Route::get("/{seccion}", function ($seccion) {
 Route::get("/", [MainPageController::class, 'inicio']);
 
 Route::get("/home", HomeController::class);
+
+Route::get("/home/{usuario}", [DBController::class,'DBdata'])->name('usuarioespecifico');
+
 
 Route::get("/searchpage/{nomviaje?}", function ($nomviaje = null){
     if($nomviaje)
