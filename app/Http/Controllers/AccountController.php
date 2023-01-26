@@ -10,7 +10,7 @@ class AccountController extends Controller
         if($nomusuario){
             return view('traveliens.usuario', ['usuario' => $nomusuario]);
         }else{
-            return ('usuario');
+            return view('traveliens.plantillausuario');
         }
     }
 }

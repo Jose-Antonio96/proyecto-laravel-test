@@ -1,30 +1,19 @@
 <!DOCTYPE html>
 <html lang=”es”>
+
+	@extends('home')
+	
 <head>
 	<meta charset=”UTF-8”>
 	<meta name viewport content=”width-device-width, initial-scale-1.0”>
-	<title>Titulo</title>
+	<title>Usuario </title>
 </head>
 <body>
-	<h1>Usuario {{$usuario}}</h1>
-	<br><br>
 	<ul>
-		@foreach($usuario as $user)
-		<li>{{$user->name}}</li>
-		<li>{{$user->name}}</li>
-	@endforeach
-	</ul>
-	{{$usuario->links()}}
-	<br><br>
-
-
+	<li><h1>Usuario @yield('name') </h1></li>
+	<li><h2>ID @yield('id')</h2></li>
+	<li><h2>Email @yield('email')</h2></li>
+		</ul>
+	<a href="{{route('traveliens.home')}}">Regresar</a>
 </body>
 </html>
-
-@yield('traveliens.plantilla')
-@yield('title', 'Título de la página')
-@yield('sidebar')
-    <p>Esto se adhiere al sidebar.</p>
-
-@yield('content')
-    <p>Contenido.</p>

@@ -57,9 +57,9 @@ Route::get("/{seccion}", function ($seccion) {
 
 Route::get("/", [MainPageController::class, 'inicio']);
 
-Route::get("/home", HomeController::class);
+Route::get("/home", HomeController::class)->name('home');
 
-Route::get("/home/{usuario}", [DBController::class,'DBdata'])->name('usuarioespecifico');
+Route::get("/home/{name}", [DBController::class,'show'])->name('usuarioespecifico');
 
 
 Route::get("/searchpage/{nomviaje?}", function ($nomviaje = null){
@@ -67,10 +67,10 @@ Route::get("/searchpage/{nomviaje?}", function ($nomviaje = null){
         return "Este es el viaje $nomviaje";
     else
         return view('traveliens/searchpage');     
-});
+})->name('searchpage');
 
 
-Route::get("/account/{nomcuenta?}", [AccountController::class, 'account']);
+Route::get("/account/{nomcuenta?}", [AccountController::class, 'account'])->name('account');
 
 Route::get("/test", function(){
     return view('traveliens/test');

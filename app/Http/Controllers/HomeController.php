@@ -15,7 +15,7 @@ class HomeController extends Controller
         
         $usuario = User::paginate(10);
         
-        Return view('traveliens.home', compact('usuario'));
+        return view('traveliens.home', compact('usuario'));
     }   
 }
 
