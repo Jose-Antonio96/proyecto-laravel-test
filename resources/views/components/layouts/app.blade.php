@@ -3,13 +3,15 @@
 <head>
 	<meta charset=”UTF-8”>
 	<meta name viewport content=”width-device-width, initial-scale-1.0”>
-{{--	<title>Traveliens - @yield('title')</title>
-	<meta name="description" content="@yield('meta-description', 'Default meta description')"/>
---}}
+	<title>Traveliens - {{$title ?? '404'}}</title>
+	<meta name="description" content="{{$metaDescription ?? 'Default meta description'}}"/>
+
 </head>
 <body>
 	{{--@include('partials.navigation')--}}
         
-    {{ $slot}}
+<x-layouts.navigation />
+
+{{$slot}}
 </body>
 </html>

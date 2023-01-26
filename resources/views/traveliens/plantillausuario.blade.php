@@ -1,3 +1,4 @@
+{{--
 @extends('layouts.app')
 
 @section('meta-description', 'No user meta description')
@@ -7,3 +8,12 @@
 <h1>Esta es la página de cuenta de Traveliens</h1>
 
 @endsection
+--}}
+
+<x-layouts.app 
+		title="Cuenta" 
+		meta-description="Cuenta meta description"
+		>
+		
+        <h1>No hay usuario logeado</h1>
+</x-layouts.app>
