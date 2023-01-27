@@ -7,6 +7,10 @@ use App\Http\Controllers\SeccionController;
 use App\Http\Controllers\SearchPageController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\DBController;
+use App\Http\Controllers\HelpController;
+use App\Http\Controllers\TravelpageController;
+use App\Http\Controllers\BackendController;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,12 +59,9 @@ Route::get("/{seccion}", function ($seccion) {
 */
 
 
-Route::get("/", [MainPageController::class, 'inicio']);
+Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 
 Route::get("/home", HomeController::class)->name('home');
-
-Route::get("/home/{name}", [DBController::class,'show'])->name('usuarioespecifico');
-
 
 Route::get("/searchpage/{nomviaje?}", function ($nomviaje = null){
     if($nomviaje)
@@ -69,12 +70,19 @@ Route::get("/searchpage/{nomviaje?}", function ($nomviaje = null){
         return view('traveliens/searchpage');     
 })->name('searchpage');
 
+Route::get("/help", HelpController::class)->name('help');
+
+Route::get('/travelpage', TravelpageController::class)->name('travelpage');
 
 Route::get("/account/{nomcuenta?}", [AccountController::class, 'account'])->name('account');
 
 Route::get("/test", function(){
     return view('traveliens/test');
 });
+
+Route::get("/CreateAccount", FormController::class)->name('form');
+
+Route::get("/backend", BackendController::class)->name('backend');
 
 Route::get('{noexiste?}', function ($noexiste) {
     if($noexiste)

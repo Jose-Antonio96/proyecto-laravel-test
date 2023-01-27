@@ -19,8 +19,8 @@ Esto iría dentro del $slot en layout.blade en components
 
 <x-layouts.app 
 		title="Página de inicio" 
-		meta-description="Página principal meta description"
+		meta-description="Página main meta description"
 		>
 		
-	<h1>Esta es la página de inicio de Traveliens</h1>
+	<h1>Esta es la página main de Traveliens</h1>
 </x-layouts.app>

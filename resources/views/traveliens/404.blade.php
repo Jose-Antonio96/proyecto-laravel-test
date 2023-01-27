@@ -11,6 +11,6 @@
     <script>
        setTimeout(function() {
            window.location.href = "http://127.0.0.1:8000/"
-       }, 3000); // 3 segundos
+       }, 2000); // 3 segundos
     </script>
 </html>

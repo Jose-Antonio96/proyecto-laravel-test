@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class TravelpageController extends Controller
+{
+    public function __invoke(){
+        return view('traveliens.travelpage');
+    }
+}
