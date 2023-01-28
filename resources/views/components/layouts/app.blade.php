@@ -12,6 +12,8 @@
         
 <x-layouts.navigation />
 
+
+
 {{$slot}}
 </body>
 </html>

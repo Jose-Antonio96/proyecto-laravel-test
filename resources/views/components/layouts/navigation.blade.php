@@ -1,5 +1,6 @@
 <ul>
     <li><a href="{{route ('mainpage') }}">Vista principal</a></li>
+    <li><a href="{{route ('home') }}">Página home</a></li>
     <li><a href="{{route ('searchpage') }}">Página de búsqueda</a></li>
     <li><a href="{{route ('account') }}">Tu cuenta</a></li>
     <li><a href="{{route ('travelpage') }}">Viaje</a></li>

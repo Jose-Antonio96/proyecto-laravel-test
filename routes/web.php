@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainPageController;
-use App\Http\Controllers\SeccionController;
 use App\Http\Controllers\SearchPageController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\DBController;
@@ -63,12 +62,7 @@ Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 
 Route::get("/home", HomeController::class)->name('home');
 
-Route::get("/searchpage/{nomviaje?}", function ($nomviaje = null){
-    if($nomviaje)
-        return "Este es el viaje $nomviaje";
-    else
-        return view('traveliens/searchpage');     
-})->name('searchpage');
+Route::get("/searchpage/{nomviaje?}", [SearchPageController::class, 'BDsearch'])->name('searchpage');
 
 Route::get("/help", HelpController::class)->name('help');
 
@@ -76,11 +70,9 @@ Route::get('/travelpage', TravelpageController::class)->name('travelpage');
 
 Route::get("/account/{nomcuenta?}", [AccountController::class, 'account'])->name('account');
 
-Route::get("/test", function(){
-    return view('traveliens/test');
-});
-
 Route::get("/CreateAccount", FormController::class)->name('form');
+
+Route::get("/searchuser/{name}", [DBController::class, 'show'])->name('dbuser');
 
 Route::get("/backend", BackendController::class)->name('backend');
 

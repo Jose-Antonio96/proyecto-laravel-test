@@ -20,4 +20,19 @@
 		>
 		
 	<h1>Esta es la Página de búsqueda de Traveliens</h1>
+	<br><br>
+	<ul>
+		@foreach($usuario as $user)
+		<li><a href="{{route ('dbuser', $user->name) }}">
+			{{$user->name}}</a></li>
+		
+	@endforeach
+	</ul>
+	{{$usuario->links()}}
+	<br><br>
+	
 </x-layouts.app>
+
+
+
+	
