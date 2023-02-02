@@ -7,9 +7,10 @@ use App\Models\User;
 
 class DBController extends Controller{
        
-    public function show($name)
+    public function show($id)
     {
-        $usuario = User::where('name', $name)->get();
+        $usuario = User::whereId($id)->get()->first();
         return view('traveliens.dbuser', compact('usuario'));   
     }
+    
 }

@@ -15,5 +15,5 @@
 		meta-description="Página cuenta {{$usuario}} meta description"
 		>
 		
-        <h1>Usuario logeado: {{$usuario}}</h1>
+        Usuario logeado: {{$usuario}}
 </x-layouts.app>

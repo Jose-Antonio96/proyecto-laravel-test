@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang=”es”>
 <head>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<meta charset=”UTF-8”>
 	<meta name viewport content=”width-device-width, initial-scale-1.0”>
 	<title>Traveliens - {{$title ?? '404'}}</title>
 	<meta name="description" content="{{$metaDescription ?? 'Default meta description'}}"/>
-
+	@vite(['resources/css/app.css','resources/js/app.js'])
+	<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 	{{--@include('partials.navigation')--}}
-	
+	<h1 class="text-5xl font-extrabold dark:text-white"/>
 <x-layouts.header/>      
-<x-layouts.navigation />
-
 
 
 {{$slot}}
 </body>
 <footer>	
+	<h1 class="text-3xl font-extrabold dark:text-white"/>
 	<x-layouts.footer/>
 </footer>
 </html>

@@ -19,11 +19,11 @@
 		meta-description="Página de búsqueda meta description"
 		>
 		
-	<h1>Esta es la Página de búsqueda de Traveliens</h1>
+	Esta es la Página de búsqueda de Traveliens
 	<br><br>
 	<ul>
 		@foreach($usuario as $user)
-		<li><a href="{{route ('dbuser', $user->name) }}">
+		<li><a href="{{route ('dbuser', $user->id) }}">
 			{{$user->name}}</a></li>
 		
 	@endforeach

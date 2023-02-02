@@ -22,5 +22,6 @@ Esto iría dentro del $slot en layout.blade en components
 		meta-description="Página main meta description"
 		>
 		
-	<h1>Esta es la página main de Traveliens</h1>
+	Esta es la página main de Traveliens
+	<img src="images/logo.png"/>
 </x-layouts.app>

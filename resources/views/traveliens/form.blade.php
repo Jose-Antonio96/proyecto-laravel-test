@@ -3,5 +3,5 @@
 		meta-description="Página formulario meta description"
 		>
 		
-	<h1>Esta es la página de formulario de Traveliens</h1>
+	Esta es la página de formulario de Traveliens
 </x-layouts.app>

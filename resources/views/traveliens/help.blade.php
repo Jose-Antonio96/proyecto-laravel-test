@@ -3,5 +3,5 @@
 		meta-description="Página ayuda meta description"
 		>
 		
-	<h1>Esta es la página de ayuda de Traveliens</h1>
+	Esta es la página de ayuda de Traveliens
 </x-layouts.app>

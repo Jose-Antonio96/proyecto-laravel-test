@@ -3,5 +3,5 @@
 		meta-description="Página backend meta description"
 		>
 		
-	<h1>Esta es la página de backend de Traveliens</h1>
+	Esta es la página de backend de Traveliens
 </x-layouts.app>

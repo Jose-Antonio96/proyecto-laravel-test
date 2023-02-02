@@ -6,7 +6,7 @@
 	<title>404</title>
 </head>
 <body>
-	<h1>¡La página que busca no existe!</h1>
+	<h1 class="text-5xl font-extrabold dark:text-white">¡La página que busca no existe!</h1>
 </body>
     <script>
        setTimeout(function() {

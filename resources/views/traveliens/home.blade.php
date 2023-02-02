@@ -17,5 +17,5 @@
 		meta-description="Página home meta description"
 		>
 		
-	<h1>Esta es la página de home de Traveliens</h1>
+	Esta es la página de home de Traveliens
 </x-layouts.app>
