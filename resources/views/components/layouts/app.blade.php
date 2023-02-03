@@ -6,7 +6,6 @@
 	<title>Traveliens - {{$title ?? '404'}}</title>
 	<meta name="description" content="{{$metaDescription ?? 'Default meta description'}}"/>
 	@vite(['resources/css/app.css','resources/js/app.js'])
-	<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 	{{--@include('partials.navigation')--}}
