@@ -61,6 +61,7 @@ Route::get("/{seccion}", function ($seccion) {
 Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 
 Route::get("/home", HomeController::class)->name('home');
+//Route::get("/home", "App\Http\Controllers\HomeController")->name('home'); No es una buena prática
 
 Route::get("/searchpage/{nomviaje?}", [SearchPageController::class, 'BDsearch'])->name('searchpage');
 

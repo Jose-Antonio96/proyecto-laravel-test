@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('travels', function (Blueprint $table) {
             $table->id();
+            $table->string('name',60);
+            $table->timestamps();
+        });
+    }
+    $table->id();
             //La propia migracion te lo reconoce como integer autoincrement
             $table->string('name',50);
-            $table->string('email', tags
             $table->string('email')->unique();
             $table->string('phone_number')->unique();
             $table->string('image')->nullable();
@@ -28,7 +32,6 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-    }
 
     /**
      * Reverse the migrations.
@@ -37,6 +40,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('travels');
     }
 };
