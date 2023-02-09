@@ -15,5 +15,5 @@
 		meta-description="Cuenta meta description"
 		>
 		
-        No hay usuario logeado
+        Login
 </x-layouts.app>

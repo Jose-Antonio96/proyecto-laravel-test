@@ -19,6 +19,6 @@ class FormController extends Controller
         $account -> email = $request->input('email');
         $account -> password = $request->input('password');
         $account -> save();
-        return "Éxito!";
+        return to_route('account') ;
     }
 }
