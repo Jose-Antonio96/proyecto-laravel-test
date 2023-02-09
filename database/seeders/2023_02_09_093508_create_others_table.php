@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('articulo', function (Blueprint $table) {
-            $table->string('imagen')->nullable();
-        });
+        Schema::table('others', function(Blueprint $table){
+            $table->foreign('image_id')->references('id')->on('images');
+     });
     }
 
     /**
@@ -25,9 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('articulo', function (Blueprint $table) {
-            $table->dropColumn('imagen');
-        });
+        Schema::dropIfExists('others');
     }
 };
-

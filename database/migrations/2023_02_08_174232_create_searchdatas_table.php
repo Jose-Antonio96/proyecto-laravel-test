@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('articulo', function (Blueprint $table) {
-            $table->string('nombre', 50)->nullable()->change();
-
+        Schema::create('searchdatas', function (Blueprint $table) {
+            $table->id();
+            $table->string('datatext');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('articulo', function (Blueprint $table) {
-            $table->string('nombre', 255)->nullable()->change();
-        });
+        Schema::dropIfExists('searchdatas');
     }
 };

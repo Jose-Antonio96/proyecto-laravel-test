@@ -5,10 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Travel extends Model
+class Tag extends Model
 {
     use HasFactory;
-
-    protected $table = 'Travels';
 
 }

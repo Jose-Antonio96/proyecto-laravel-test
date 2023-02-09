@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class DBController extends Controller{
+class DBuserresult extends Controller{
        
     public function show($id)
     {

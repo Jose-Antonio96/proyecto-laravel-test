@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('articulo', function (Blueprint $table) {
-            $table->id();
+        Schema::create('images', function (Blueprint $table) {
+            $table->increments('id'); //you save this id in other tables
+            $table->string('mime_type')->nullable();
+            $table->string('title')->nullable();
+            $table->string('alt')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
-            $table->string('nombre');
         });
     }
 
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articulo');
+        Schema::dropIfExists('images');
     }
 };

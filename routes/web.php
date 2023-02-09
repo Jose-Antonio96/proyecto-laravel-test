@@ -63,7 +63,9 @@ Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 Route::get("/home", HomeController::class)->name('home');
 //Route::get("/home", "App\Http\Controllers\HomeController")->name('home'); No es una buena prática
 
-Route::get("/searchpage/{nomviaje?}", [SearchPageController::class, 'BDsearch'])->name('searchpage');
+Route::get("/searchpage", [SearchPageController::class, 'index'])->name('searchpage');
+
+Route::get("/searchpage/{nomviaje?}", [SearchPageController::class, 'show'])->name('searchpage');
 
 Route::get("/help", HelpController::class)->name('help');
 
@@ -72,9 +74,9 @@ Route::get('/travelpage', TravelpageController::class)->name('travelpage');
 Route::get("/account/{nomcuenta?}", [AccountController::class, 'account'])->name('account');
 
 Route::get("/CreateAccount", FormController::class)->name('form');
-
-Route::get("/searchuser/{name}", [DBController::class, 'show'])->name('dbuser');
-
+/*
+Route::get("/searchuser/{name}", [DBuserresult::class, 'show'])->name('dbuser');
+*/
 Route::get("/backend", BackendController::class)->name('backend');
 
 Route::get('{noexiste?}', function ($noexiste) {

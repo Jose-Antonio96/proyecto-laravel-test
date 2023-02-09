@@ -22,9 +22,9 @@
 	Esta es la Página de búsqueda de Traveliens
 	<br><br>
 	<ul>
-		@foreach($usuario as $user)
-		<li><a href="{{route ('dbuser', $user->id) }}">
-			{{$user->name}}</a></li>
+		@foreach($travel as $user)
+		<li><a href="{{route ('searchpage', $travel->id) }}">
+			{{$travel->name}}</a></li>
 		
 	@endforeach
 	</ul>
