@@ -19,8 +19,9 @@
 		meta-description="Página de búsqueda meta description"
 		>
 		
-	Esta es la Página de búsqueda de Traveliens
+	Búsqueda
 	<br><br>
+	<a href="">Iniciar búsqueda</a>
 	<ul>
 		@foreach($travel as $user)
 		<li><a href="{{route ('searchpage', $travel->id) }}">

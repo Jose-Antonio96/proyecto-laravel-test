@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('others', function(Blueprint $table){
-            $table->foreign('image_id')->references('id')->on('images');
-     });
+        Schema::create('players', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('others');
+        Schema::dropIfExists('players');
     }
 };

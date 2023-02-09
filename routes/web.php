@@ -73,7 +73,9 @@ Route::get('/travelpage', TravelpageController::class)->name('travelpage');
 
 Route::get("/account/{nomcuenta?}", [AccountController::class, 'account'])->name('account');
 
-Route::get("/CreateAccount", FormController::class)->name('form');
+Route::get("/CreateAccount", [FormController::class, 'create'])->name('form');
+
+Route::post("/CreateAccount" , [FormController::class, 'save'])->name('form.save');
 /*
 Route::get("/searchuser/{name}", [DBuserresult::class, 'show'])->name('dbuser');
 */

@@ -14,11 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->increments('id'); //you save this id in other tables
-            $table->string('mime_type')->nullable();
+            $table->id();
             $table->string('title')->nullable();
-            $table->string('alt')->nullable();
+            $table->string('mime_type')->nullable(); 
+            //Mime type se refiere al formato en el como se envia un archivo a través de la web
             $table->text('description')->nullable();
+            $table->string('alt')->nullable();
             $table->timestamps();
         });
     }
