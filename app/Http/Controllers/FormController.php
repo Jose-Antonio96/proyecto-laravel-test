@@ -14,11 +14,20 @@ class FormController extends Controller
 
     public function save(Request $request){
 
+        $request -> validate([
+            'name' => ['required', 'min:4'], 
+            'email' => ['required', 'email:rfc,dns'],
+            'password' => ['required', 'min:8']
+            ]);
+
         $account = new User;
         $account -> name = $request->input('name');
         $account -> email = $request->input('email');
         $account -> password = $request->input('password');
         $account -> save();
-        return to_route('account') ;
+
+        session()->flash('status', 'Cuenta creada con éxito.');
+
+        return to_route('account');
     }
 }

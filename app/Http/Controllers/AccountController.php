@@ -13,5 +13,9 @@ class AccountController extends Controller
             return view('traveliens.plantillausuario');
         }
     }
+
+    public function login(){
+        
+    }
 }
 
