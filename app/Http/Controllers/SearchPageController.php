@@ -9,9 +9,9 @@ class SearchPageController extends Controller
 {
     public function index(){
 
-        $travel = Travel::paginate(10);
+        $travels = Travel::paginate(10);
             
-            return view('traveliens.searchpage', compact('travel')); 
+            return view('traveliens.searchpage', compact('travels')); 
     }
 
 

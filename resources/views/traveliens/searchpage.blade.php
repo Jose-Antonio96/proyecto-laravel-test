@@ -23,13 +23,13 @@
 	<br><br>
 	<a href="">Iniciar búsqueda</a>
 	<ul>
-		@foreach($travel as $user)
+		@foreach($travels as $travel)
 		<li><a href="{{route ('searchpage', $travel->id) }}">
 			{{$travel->name}}</a></li>
 		
 	@endforeach
 	</ul>
-	{{$usuario->links()}}
+	{{$travels->links()}}
 	<br><br>
 	
 </x-layouts.app>

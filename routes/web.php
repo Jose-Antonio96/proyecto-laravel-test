@@ -10,7 +10,6 @@ use App\Http\Controllers\HelpController;
 use App\Http\Controllers\TravelpageController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\FormController;
-use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +26,7 @@ use App\Http\Controllers\ProfileController;
 Route::get("/", function(){
     return "una nueva ruta, hurray!";
 });
-*/
+
 
 Route::get('miruta/{seccion}/{categoria?}', function($seccion, $categoria=null){
     if ($categoria)
@@ -35,7 +34,7 @@ Route::get('miruta/{seccion}/{categoria?}', function($seccion, $categoria=null){
     else
         return "esta es mi nueva ruta: $seccion";		
 });
-
+*/
 
 //Route::get("/", HomeController::class);
 /*
@@ -58,19 +57,6 @@ Route::get("/{seccion}", function ($seccion) {
 });
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';
-
-
 
 Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 
@@ -85,7 +71,9 @@ Route::get("/help", HelpController::class)->name('help');
 
 Route::get('/travelpage', TravelpageController::class)->name('travelpage');
 
-Route::get("/account/{nomcuenta?}", [AccountController::class, 'account'])->name('account');
+Route::get("/account", [AccountController::class, 'show'])->name('account');
+
+Route::get("/account/{nomcuenta?}/update", [AccountController::class, 'update'])->name('account.update');
 
 Route::get("/CreateAccount", [FormController::class, 'create'])->name('form');
 

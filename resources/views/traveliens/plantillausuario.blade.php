@@ -20,5 +20,17 @@
 		</div>
 		@endif
 		
-        Login
-</x-layouts.app>
+        Usuario
+
+		<ul>
+			@foreach($users as $user)
+			<li><a href="{{route ('dbuser', $user->id) }}">
+				{{$user->name}}</a></li>
+			
+		@endforeach
+		</ul>
+		{{$users->links()}}
+		<div class="flex baseline">
+			<a href="{{route ('account.update') }}">Actualizar datos</a>
+		</div>
+	</x-layouts.app>
