@@ -73,7 +73,13 @@ Route::get('/travelpage', TravelpageController::class)->name('travelpage');
 
 Route::get("/account", [AccountController::class, 'show'])->name('account');
 
-Route::get("/account/{nomcuenta?}/update", [AccountController::class, 'update'])->name('account.update');
+Route::get("/account/{user}", [DBController::class, 'show'])->name('dbuser');
+
+Route::get("/account/{user}/update", [AccountController::class, 'update'])->name('account.update');
+
+Route::patch("/account/{user}", [AccountController::class, 'edit' ])->name('account.edit');
+
+Route::delete("/account/{user}", [AccountController::class, 'delete'])->name('account.delete');
 
 Route::get("/CreateAccount", [FormController::class, 'create'])->name('form');
 
@@ -81,6 +87,7 @@ Route::post("/CreateAccount" , [FormController::class, 'save'])->name('form.save
 /*
 Route::get("/searchuser/{name}", [DBuserresult::class, 'show'])->name('dbuser');
 */
+
 Route::get("/backend", BackendController::class)->name('backend');
 
 Route::get('{noexiste?}', function ($noexiste) {

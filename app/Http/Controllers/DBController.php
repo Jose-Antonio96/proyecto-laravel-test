@@ -9,8 +9,8 @@ class DBController extends Controller{
        
     public function show($id)
     {
-        $usuario = User::whereId($id)->get()->first();
-        return view('traveliens.dbuser', compact('usuario'));   
+        $user = User::whereId($id)->get()->first();
+        return view('traveliens.dbuser', compact('user'));   
     }
     
 }

@@ -5,29 +5,30 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\App;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\SaveUserRequest;
 
 class FormController extends Controller
 {
     public function create(){
-        return view('traveliens.form');
+        return view('traveliens.form', ['user' => new User()]);
     }
 
-    public function save(Request $request){
+    public function save(SaveUserRequest $request){
 
-        $request -> validate([
-            'name' => ['required', 'min:4'], 
-            'email' => ['required', 'email:rfc,dns'],
-            'password' => ['required', 'min:8']
-            ]);
+        
 
+        /*
         $account = new User;
         $account -> name = $request->input('name');
         $account -> email = $request->input('email');
         $account -> password = $request->input('password');
         $account -> save();
+        */
+        User::create($request->validated());
 
+        /*
         session()->flash('status', 'Cuenta creada con éxito.');
-
-        return to_route('account');
+        */
+        return to_route('account')->with('status', 'Cuenta creada con éxito.');
     }
 }

@@ -21,16 +21,24 @@
 		@endif
 		
         Usuario
-
+		
 		<ul>
 			@foreach($users as $user)
-			<li><a href="{{route ('dbuser', $user->id) }}">
-				{{$user->name}}</a></li>
-			
-		@endforeach
+				<div>
+					<li><a href="{{route ('dbuser', $user) }}">
+						{{$user->name}}</a></li>
+
+					<a href="{{route ('account.update', $user) }}">Actualizar datos</a> &nbsp; {{--Esto añade un espacio en blanco--}}
+
+					<form action="{{route ('account.delete', $user) }}" method="POST">
+						@csrf 
+						@method('DELETE')
+						<button type="submit">Eliminar cuenta</button>
+					</form><br>
+				</div>
 		</ul>
+		@endforeach
+		
 		{{$users->links()}}
-		<div class="flex baseline">
-			<a href="{{route ('account.update') }}">Actualizar datos</a>
-		</div>
+		
 	</x-layouts.app>
