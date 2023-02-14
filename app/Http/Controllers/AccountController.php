@@ -8,6 +8,10 @@ use App\Http\Requests\SaveUserRequest;
 
 class AccountController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth', ['except' =>['show']]);
+    }
+
     public function login(){
         
     }

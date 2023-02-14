@@ -27,7 +27,7 @@
 				<div>
 					<li><a href="{{route ('dbuser', $user) }}">
 						{{$user->name}}</a></li>
-
+						@auth
 					<a href="{{route ('account.update', $user) }}">Actualizar datos</a> &nbsp; {{--Esto añade un espacio en blanco--}}
 
 					<form action="{{route ('account.delete', $user) }}" method="POST">
@@ -35,6 +35,7 @@
 						@method('DELETE')
 						<button type="submit">Eliminar cuenta</button>
 					</form><br>
+					@endauth
 				</div>
 		</ul>
 		@endforeach

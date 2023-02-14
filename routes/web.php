@@ -10,6 +10,7 @@ use App\Http\Controllers\HelpController;
 use App\Http\Controllers\TravelpageController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\Auth\RegistereduserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +57,13 @@ Route::get("/{seccion}", function ($seccion) {
         return "esta es la seccion $seccion del blog";
 });
 */
+Route::get('/login', function(){
+    return 'Login page';
+})->name('login');
 
+Route::view('/register', 'auth.register')->name('register');
+
+Route::post('/register', [RegistereduserController::class, 'store']);
 
 Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 
@@ -81,19 +88,22 @@ Route::patch("/account/{user}", [AccountController::class, 'edit' ])->name('acco
 
 Route::delete("/account/{user}", [AccountController::class, 'delete'])->name('account.delete');
 
+Route::resource("CreateAccount", FormController::class);
+/*
 Route::get("/CreateAccount", [FormController::class, 'create'])->name('form');
 
 Route::post("/CreateAccount" , [FormController::class, 'save'])->name('form.save');
-/*
+
 Route::get("/searchuser/{name}", [DBuserresult::class, 'show'])->name('dbuser');
 */
 
-Route::get("/backend", BackendController::class)->name('backend');
+Route::get("/backend", BackendController::class)->name('backend')->middleware('auth');
 
 Route::get('{noexiste?}', function ($noexiste) {
     if($noexiste)
     return view('traveliens.404');
 });
+
 
 
 

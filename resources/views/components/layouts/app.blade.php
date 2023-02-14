@@ -9,7 +9,7 @@
 </head>
 <body>
 	{{--@include('partials.navigation')--}}
-	<h1 class="text-5xl font-extrabold dark:text-white"/>
+	
 <x-layouts.header/>      
 
 
