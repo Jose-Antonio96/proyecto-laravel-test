@@ -17,14 +17,16 @@ return new class extends Migration
             $table->id();
             //La propia migracion te lo reconoce como integer autoincrement
             $table->string('name',50);
-            $table->string('tags_id')->nullable();
+            $table->unsignedBigInteger('tag_id');
+            $table->foreign('tag_id')->references('id')->on('tags');
             $table->string('email')->unique();
-            $table->string('phone_number')->unique()->nullable();
+            $table->timestamp('email_verified_at');
+            $table->bigInteger('phone_number')->unique();
+            $table->boolean('administrator');
             $table->string('image')->nullable();
-            $table->string('PostalCode', 10)->nullable();
-            $table->string('Address')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password')->nullable();
+            $table->string('PostalCode', 10);
+            $table->string('Address', 30);
+            $table->bigInteger('password');
             $table->rememberToken();
             $table->timestamps();
         });

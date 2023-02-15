@@ -17,12 +17,12 @@
 		Email
 		<x-layouts.label
 		name="email" 
-		type="text"
+		type="email"
 		value="email"
 		>
 
 	</x-layouts.label>
-		Password
+		Contraseña
 		<x-layouts.label
 		name="password" 
 		type="password"
@@ -30,6 +30,17 @@
 		>
 
 </x-layouts.label>
+
+		Confirmar contraseña
+		<x-layouts.label
+		name="password_confirmation" 
+		type="password"
+		value="password_confirmation"
+				>
+
+</x-layouts.label>
+
+
 		<button type="submit">Registrar</button>
 		<br>
 	</form><br>

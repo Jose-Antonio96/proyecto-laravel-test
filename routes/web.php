@@ -11,6 +11,7 @@ use App\Http\Controllers\TravelpageController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\Auth\RegistereduserController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,9 +58,9 @@ Route::get("/{seccion}", function ($seccion) {
         return "esta es la seccion $seccion del blog";
 });
 */
-Route::get('/login', function(){
-    return 'Login page';
-})->name('login');
+Route::view('/login', 'auth.login')->name('login');
+
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 
 Route::view('/register', 'auth.register')->name('register');
 

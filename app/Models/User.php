@@ -19,7 +19,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
 
-
+     public function setPasswordAttribute($value)
+     {
+         if($value != ""){
+             $this->attributes['password'] = bcrypt($value);
+         }
+     }
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -39,4 +44,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         //Esto lo que hace es cambiar la variable a otra, en este caso a un datetime para que la base de datos pueda usarlo
     ];
+
+    public function tags(){
+        return $this->belongsToMany(tag::class);
+    }
 }

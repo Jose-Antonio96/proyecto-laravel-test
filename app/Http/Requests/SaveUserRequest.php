@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules;
+
 
 class SaveUserRequest extends FormRequest
 {
@@ -25,9 +27,9 @@ class SaveUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'min:4'], 
-            'email' => ['required', 'email:rfc,dns'],
-            'password' => ['required', 'min:8']
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ];
     }
 }

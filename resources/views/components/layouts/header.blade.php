@@ -34,7 +34,7 @@
       </a>
       
 
-        <a href="{{route ('account') }}">
+        <a href="{{route ('login') }}">
           <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-12 rounded-full m-10">
           Login
         </button>

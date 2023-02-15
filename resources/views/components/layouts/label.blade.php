@@ -1,5 +1,5 @@
 
-<label>
+
     <br>
     <input name={{$name}} type={{$type}} value="{{old($value)}}">
     @error('name')
@@ -7,5 +7,5 @@
         <small>*{{$message}}</small>
     @enderror
 
-</label><br>
+
 

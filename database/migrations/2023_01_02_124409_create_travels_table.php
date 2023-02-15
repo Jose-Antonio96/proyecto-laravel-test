@@ -15,16 +15,19 @@ return new class extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
-            $table->string('name',60);
-            $table->text('description', 500);
-            $table->timestamps();
-            $table->boolean('sponsored')->nullable();
-            $table->string('image')->nullable();
-            $table->timestamp('starts')->nullable();
-            $table->timestamp('finishes')->nullable();
-            $table->string('tags_id')->nullable();
+            $table->string('name',50);
+            $table->longText('description');
+            $table->boolean('sponsored');
+            $table->string('image');
+            $table->timestamp('starts');
+            $table->timestamp('finishes');
+            $table->unsignedBigInteger('tag_id');
+            $table->foreign('tag_id')->references('id')->on('tags');
+            $table->boolean('professional');
             $table->string('price', 12)->nullable();
-            $table->string('organizer', 60)->nullable();
+            $table->string('organizer', 60);
+            $table->rememberToken();
+            $table->timestamps();
 
         });
     }
