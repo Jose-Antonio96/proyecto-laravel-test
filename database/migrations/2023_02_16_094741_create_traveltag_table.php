@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('tags')->nullable();
+        Schema::create('traveltag', function (Blueprint $table) {
+            $table->unsignedBigInteger('travel_id',);
+            $table->foreign('travel_id')->references('id')->on('travels');
+            $table->unsignedBigInteger('tag_id');
+            $table->foreign('tag_id')->references('id')->on('tags');
+            $table->timestamps();
         });
+        
     }
 
     /**
@@ -25,8 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('traveltag');
     }
 };

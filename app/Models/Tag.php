@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
-
+    /*
     public function travels(){
         return $this->belongsToMany(Travel::class);
     }
@@ -16,5 +16,6 @@ class Tag extends Model
     public function users(){
         return $this->belongsToMany(user::class);
     }
+    */
 
 }

@@ -15,18 +15,20 @@ return new class extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50);
-            $table->longText('description');
+            $table->string('name',100);
+            $table->string('location', 40 );          $table->longText('description');
             $table->boolean('sponsored');
-            $table->string('image');
-            $table->timestamp('starts');
-            $table->timestamp('finishes');
+            $table->string('image')->nullable();
+            $table->timestamp('starts')->nullable();
+            $table->timestamp('finishes')->nullable();
+            /*
             $table->unsignedBigInteger('tag_id');
             $table->foreign('tag_id')->references('id')->on('tags');
+            */
             $table->boolean('professional');
             $table->string('price', 12)->nullable();
             $table->string('organizer', 60);
-            $table->rememberToken();
+            $table->rememberToken()->nullable();
             $table->timestamps();
 
         });

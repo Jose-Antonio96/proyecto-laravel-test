@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Article;
+use App\Models\Tag;
 
-class ArticlesSeeder extends Seeder
+class TagSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,9 @@ class ArticlesSeeder extends Seeder
      */
     public function run()
     {
-        Article::factory()->count(50)->create();
+        $tag = new Tag();
+        $tag -> tags = "Torneo";
+        $tag -> save();
+
     }
 }

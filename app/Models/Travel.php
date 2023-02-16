@@ -8,10 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Travel extends Model
 {
     use HasFactory;
-    
+
+
+    protected $table = 'Travels';
+    /*
     public function tags(){
         return $this->belongsToMany(Travel::class);
+        
     }
+    Esto no haría falta con la foreign key en la migración de travels
+    */
 
 }
 //Con esto ya se conecta automaticamente con la tabla de la base de datos

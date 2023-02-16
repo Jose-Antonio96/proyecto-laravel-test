@@ -44,8 +44,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         //Esto lo que hace es cambiar la variable a otra, en este caso a un datetime para que la base de datos pueda usarlo
     ];
-
+    /*
     public function tags(){
         return $this->belongsToMany(tag::class);
     }
+
+    public function travels(){
+        return $this->hasMany(travel::class);
+    }
+    */
+    
 }

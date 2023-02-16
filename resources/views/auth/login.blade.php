@@ -7,6 +7,10 @@
 
     <form action="{{route('login')}}" method="POST">
 		@csrf
+		@error('email')
+        <br>
+        <small>*{{$message}}</small>
+    @enderror
 		<div>Email</div>
         <label class="flex flex-col"> 
 		<x-layouts.loginlabels

@@ -9,13 +9,19 @@ class SearchPageController extends Controller
 {
     public function index(){
 
-        $travels = Travel::paginate(10);
-            
-            return view('traveliens.searchpage', compact('travels')); 
+        return view('traveliens.searchpage'); 
     }
 
+    public function result(Request $request){
 
-    public function show($id){
-        return Travel::find($id);
+        if($request->name){
+            $travel = Travel::where('name', 'LIKE', '%'.$request->name.'%')->latest()->paginate(15);
+    
+
+        return view('traveliens.searchpage', compact('travel'));
+    }else{
+        return redirect()->back()->with('message', "Búsqueda vacia");
+    }
+ 
     }
 }

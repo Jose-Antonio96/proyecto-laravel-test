@@ -15,23 +15,20 @@
 
 
 <x-layouts.app 
+
 		title="Página de búsqueda" 
 		meta-description="Página de búsqueda meta description"
 		>
+		<div>
+			Rellene los campos que necesite
+		</div>
+    <form action="{{route('searchpage.result')}}" method="GET" role="search">
+		@csrf
+		@include('traveliens.form-fields')
 		
-	Búsqueda
-	<br><br>
-	<a href="">Iniciar búsqueda</a>
-	<ul>
-		@foreach($travels as $travel)
-		<li><a href="{{route ('searchpage', $travel->id) }}">
-			{{$travel->name}}</a></li>
-		
-	@endforeach
-	</ul>
-	{{$travels->links()}}
-	<br><br>
-	
+		<button type="submit">Iniciar búsqueda</button>
+		<br>
+	</form><br>
 </x-layouts.app>
 
 

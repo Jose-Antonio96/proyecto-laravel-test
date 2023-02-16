@@ -73,7 +73,7 @@ Route::get("/home", HomeController::class)->name('home');
 
 Route::get("/searchpage", [SearchPageController::class, 'index'])->name('searchpage');
 
-Route::get("/searchpage/{nomviaje?}", [SearchPageController::class, 'show'])->name('searchpage');
+Route::get("/searchpage/result", [SearchPageController::class, 'result'])->name('searchpage.result');
 
 Route::get("/help", HelpController::class)->name('help');
 
@@ -88,8 +88,6 @@ Route::get("/account/{user}/update", [AccountController::class, 'update'])->name
 Route::patch("/account/{user}", [AccountController::class, 'edit' ])->name('account.edit');
 
 Route::delete("/account/{user}", [AccountController::class, 'delete'])->name('account.delete');
-
-Route::resource("CreateAccount", FormController::class);
 /*
 Route::get("/CreateAccount", [FormController::class, 'create'])->name('form');
 
