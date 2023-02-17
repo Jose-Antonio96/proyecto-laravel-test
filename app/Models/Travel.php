@@ -10,7 +10,7 @@ class Travel extends Model
     use HasFactory;
 
 
-    protected $table = 'Travels';
+    protected $table = 'travels';
     /*
     public function tags(){
         return $this->belongsToMany(Travel::class);

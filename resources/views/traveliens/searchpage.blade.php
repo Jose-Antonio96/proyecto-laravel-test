@@ -24,7 +24,7 @@
 		</div>
     <form action="{{route('searchpage.result')}}" method="GET" role="search">
 		@csrf
-		@include('traveliens.form-fields')
+		@include('traveliens.search-form-fields')
 		
 		<button type="submit">Iniciar búsqueda</button>
 		<br>

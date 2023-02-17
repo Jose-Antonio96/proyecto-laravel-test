@@ -1,6 +1,6 @@
-<label>
-    Nombre <br>
-    <input name="name" type="text" value="{{old('name', $user->name)}}">
+<label class="flex flex-col">
+    Nombre
+    <input name="name" type="text" value="{{old('name')}}">
     @error('name')
         <br>
         <small>*{{$message}}</small>
@@ -8,107 +8,24 @@
 
 </label><br>
 
-<label>
-    Nombre <br>
-    <input name="name" type="text" value="{{old('name', $user->name)}}">
-    @error('name')
-        <br>
-        <small>*{{$message}}</small>
-    @enderror
-
+<label class="flex flex-col">
+    Tiempo de inicio
+    <input name="start" type="date" value="{{old('start')}}">
 </label><br>
 
-<label>
-    Nombre <br>
-    <input name="name" type="text" value="{{old('name', $user->name)}}">
-    @error('name')
-        <br>
-        <small>*{{$message}}</small>
-    @enderror
-
+<label class="flex flex-col">
+    Tiempo de finalización
+    <input name="end" type="date" value="{{old('end')}}">
 </label><br>
 
-<label>
+<label class="flex flex-col">
     Nombre <br>
-    <input name="name" type="text" value="{{old('name', $user->name)}}">
-    @error('name')
-        <br>
-        <small>*{{$message}}</small>
-    @enderror
+    <input name="location" type="text" value="{{old('location')}}">
 
 </label><br>
+<label class="flex flex-col">
+	Etiquetas a buscar
+	<input name="tags" type="text" value="{{old('tags')}}">
 
-<label>
-    Nombre <br>
-    <input name="name" type="text" value="{{old('name', $user->name)}}">
-    @error('name')
-        <br>
-        <small>*{{$message}}</small>
-    @enderror
+</label>
 
-</label><br>
-
-<div>Nombre de un destino o evento</div>
-        <label class="flex flex-col"> 
-		<x-layouts.loginlabels
-		name="name" 
-		type="text"
-		value="name"
-		>
-</x-layouts.loginlabels>
-</label> <br>
-		{{--}}
-		@error('start')
-				<br>
-				<small>*{{$message}}</small>
-			@enderror
-				<div>Tiempo de inicio</div>
-				<label class="flex flex-col"> 
-				<x-layouts.loginlabels
-				name="start" 
-				type="date"
-				value="start"
-				>
-		</x-layouts.loginlabels>
-	</label> <br>
-
-		@error('end')
-				<br>
-				<small>*{{$message}}</small>
-			@enderror
-				<div>Tiempo de finalización</div>
-				<label class="flex flex-col"> 
-				<x-layouts.loginlabels
-				name="end" 
-				type="date"
-				value="end"
-				>
-		</x-layouts.loginlabels>
-	</label> <br>
-		@error('location')
-				<br>
-				<small>*{{$message}}</small>
-			@enderror
-				<div>Localización</div>
-				<label class="flex flex-col"> 
-				<x-layouts.loginlabels
-				name="location" 
-				type="text"
-				value="name"
-				>
-		</x-layouts.loginlabels>
-	</label> <br>
-		@error('tags')
-				<br>
-				<small>*{{$message}}</small>
-			@enderror
-				<div>Etiquetas a buscar</div>
-				<label class="flex flex-col"> 
-				<x-layouts.loginlabels
-				name="tags" 
-				type="text"
-				value="tags"
-				>
-		</x-layouts.loginlabels>
-	</label><br> 
-	--}}

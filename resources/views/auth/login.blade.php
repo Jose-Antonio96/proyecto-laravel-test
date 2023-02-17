@@ -7,38 +7,30 @@
 
     <form action="{{route('login')}}" method="POST">
 		@csrf
-		@error('email')
-        <br>
-        <small>*{{$message}}</small>
-    @enderror
+		
 		<div>Email</div>
         <label class="flex flex-col"> 
-		<x-layouts.loginlabels
-		name="email" 
-		type="email"
-		value="email"
-		>
-</x-layouts.loginlabels>
+			<input name="email" type="email" value="{{old("email")}}">
+			@error('email')
+			<br>
+			<small>*{{$message}}</small>
+		@enderror
+
 </label> 
 
         <div>Contraseña</div>
-        <label class="flex flex-col"> 
-		<x-layouts.loginlabels
-		name="password" 
-		type="password"
-		value="password"
-		>
-</x-layouts.loginlabels>
-</label>
-        <label class="flex items-center"> 
-			<input 
-			class="rounded-md"
-			name="password_confirmation" 
-			type="checkbox"
-			>
-		
-     <br>
-</label>
+		<label class="flex flex-col"> 
+			<input name="password" type="password" value="{{old("password")}}">
+			@error('password')
+			<br>
+			<small>*{{$message}}</small>
+		@enderror
+
+</label> 
+		<label class="flex flex-col"> 
+			<input name="password_confirmation" type="checkbox">
+			
+</label> 
         <div>Recuérdame</div><br>
 		
 		<button type="submit">Entrar</button>

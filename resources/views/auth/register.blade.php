@@ -6,43 +6,45 @@
 	Esta es la página de registro de Traveliens
     <form action="{{route('register')}}" method="POST">
 		@csrf
+		<label class="flex flex-col">
 		Nombre
-		<x-layouts.label
-        name="name" 
-		type="text"
-		value="name"
-        >
-		
-</x-layouts.label>
+		<input name="name" type="text" value="{{old('name')}}">
+    @error('name')
+        <br>
+        <small>*{{$message}}</small>
+    @enderror
+
+</label><br>
+		<label class="flex flex-col">
 		Email
-		<x-layouts.label
-		name="email" 
-		type="email"
-		value="email"
-		>
-
-	</x-layouts.label>
+		<input name="email" type="email" value="{{old('email')}}">
+	@error('email')
+		<br>
+		<small>*{{$message}}</small>
+	@enderror
+</label><br>
+		
+		<label class="flex flex-col">
 		Contraseña
-		<x-layouts.label
-		name="password" 
-		type="password"
-		value="password"
-		>
+		<input name="password" type="password" value="{{old('password')}}">
+	@error('email')
+		<br>
+		<small>*{{$message}}</small>
+	@enderror
 
-</x-layouts.label>
-
+</label><br>
+		<label class="flex flex-col">
 		Confirmar contraseña
-		<x-layouts.label
-		name="password_confirmation" 
-		type="password"
-		value="password_confirmation"
-				>
+		<input name="password_confirmation" type="password" value="{{old('password_confirmation')}}">
+	@error('email')
+		<br>
+		<small>*{{$message}}</small>
+	@enderror
 
-</x-layouts.label>
-
-
+</label><br>
 		<button type="submit">Registrar</button>
 		<br>
 	</form><br>
     <a href="{{route ('login') }}">Login</a>
+	
 </x-layouts.app>
