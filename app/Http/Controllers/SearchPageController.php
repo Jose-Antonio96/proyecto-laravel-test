@@ -14,14 +14,15 @@ class SearchPageController extends Controller
 
     public function result(Request $request){
 
-        if($request->name){
-            $travel = Travel::where('name', 'LIKE', '%'.$request->name.'%')->latest()->paginate(15);
-    
+        $travel = $request->input('searchpage.result');
 
-        return view('traveliens.searchpage', compact('travel'));
-    }else{
-        return redirect()->back()->with('message', "Búsqueda vacia");
-    }
+        $travel = Travel::query()
+        ->where('name', 'LIKE', "%{$travel}%")
+        ->get();
+        
+            
+        return view('searchpage.result', compact('travel'));
+    
  
     }
 }

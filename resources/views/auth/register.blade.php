@@ -4,8 +4,12 @@
 		>
 		
 	Esta es la página de registro de Traveliens
+
+	
+
     <form action="{{route('register')}}" method="POST">
 		@csrf
+
 		<label class="flex flex-col">
 		Nombre
 		<input name="name" type="text" value="{{old('name')}}">
@@ -15,6 +19,7 @@
     @enderror
 
 </label><br>
+
 		<label class="flex flex-col">
 		Email
 		<input name="email" type="email" value="{{old('email')}}">
@@ -22,12 +27,24 @@
 		<br>
 		<small>*{{$message}}</small>
 	@enderror
+
 </label><br>
-		
+{{--}}
+</label><br>
+		<label class="flex flex-col">
+			Número de teléfono
+			<input name="phone_number" type="tel" placeholder="123-45-67-89" 
+		 value="{{old('phone_number')}}">
+			@error('phone_number')
+			<br>
+			<small>*{{$message}}</small>
+		@enderror
+</label><br>
+--}}
 		<label class="flex flex-col">
 		Contraseña
 		<input name="password" type="password" value="{{old('password')}}">
-	@error('email')
+	@error('password')
 		<br>
 		<small>*{{$message}}</small>
 	@enderror
@@ -36,7 +53,7 @@
 		<label class="flex flex-col">
 		Confirmar contraseña
 		<input name="password_confirmation" type="password" value="{{old('password_confirmation')}}">
-	@error('email')
+	@error('confirmed')
 		<br>
 		<small>*{{$message}}</small>
 	@enderror

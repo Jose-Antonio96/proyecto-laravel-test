@@ -21,6 +21,11 @@ Esto iría dentro del $slot en layout.blade en components
 		title="Página de inicio" 
 		meta-description="Página main meta description"
 		>
+		@if(session('status'))
+		<div class="status">
+			{{session('status')}} <br>
+		</div>
+		@endif
 		
 	Esta es la página main de Traveliens
 	<img src="images/logo.png"/>

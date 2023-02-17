@@ -10,8 +10,8 @@ use App\Http\Controllers\HelpController;
 use App\Http\Controllers\TravelpageController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\FormController;
-use App\Http\Controllers\Auth\RegistereduserController;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\auth\RegistereduserController;
+use App\Http\Controllers\auth\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +61,8 @@ Route::get("/{seccion}", function ($seccion) {
 Route::view('/login', 'auth.login')->name('login');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 Route::view('/register', 'auth.register')->name('register');
 

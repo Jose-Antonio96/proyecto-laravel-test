@@ -1,17 +1,14 @@
 <label class="flex flex-col">
     Nombre
-    <input name="name" type="text" value="{{old('name')}}">
-    @error('name')
-        <br>
-        <small>*{{$message}}</small>
-    @enderror
+    <input name="name" type="text" value="{{old('name')}}" required>
 
 </label><br>
 
-<label class="flex flex-col">
+{{--
+    label class="flex flex-col">
     Tiempo de inicio
     <input name="start" type="date" value="{{old('start')}}">
-</label><br>
+</><br>
 
 <label class="flex flex-col">
     Tiempo de finalización
@@ -28,4 +25,4 @@
 	<input name="tags" type="text" value="{{old('tags')}}">
 
 </label>
-
+--}}

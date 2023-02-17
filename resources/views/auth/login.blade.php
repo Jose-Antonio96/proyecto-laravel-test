@@ -5,6 +5,12 @@
 		
 	Esta es la página de login de Traveliens
 
+	@if(session('status'))
+		<div class="status">
+			{{session('status')}} <br>
+		</div>
+		@endif
+		
     <form action="{{route('login')}}" method="POST">
 		@csrf
 		
@@ -16,7 +22,7 @@
 			<small>*{{$message}}</small>
 		@enderror
 
-</label> 
+</label> <br>
 
         <div>Contraseña</div>
 		<label class="flex flex-col"> 
@@ -26,15 +32,15 @@
 			<small>*{{$message}}</small>
 		@enderror
 
-</label> 
-		<label class="flex flex-col"> 
-			<input name="password_confirmation" type="checkbox">
+</label><br>
+		<label class="flex items-center">
+			<input name="remember" type="checkbox">
 			
-</label> 
-        <div>Recuérdame</div><br>
+        <span class="cursor-pointer">Recuérdame</span>
 		
-		<button type="submit">Entrar</button>
-		<br>
+</label><br>
+	<button type="submit">Entrar</button>
+
 	</form><br>
     <a href="{{route ('register') }}">Registrarse</a>
 </x-layouts.app>

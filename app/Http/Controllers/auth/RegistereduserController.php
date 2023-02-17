@@ -25,3 +25,4 @@ class RegisteredUserController extends Controller
         return to_route('login')->with('status', 'Cuenta creada con éxito');
     }
 }
+

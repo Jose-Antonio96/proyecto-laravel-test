@@ -12,7 +12,8 @@ return [
     | as the size rules. Feel free to tweak each of these messages here.
     |
     */
-
+    
+    'phone_number' => 'El número de teléfono es obligatorio',
     'accepted'             => 'El campo :attribute debe ser aceptado.',
     'active_url'           => 'El campo :attribute no es una URL válida.',
     'after'                => 'El campo :attribute debe ser una fecha posterior a :date.',
@@ -30,7 +31,7 @@ return [
         'array'   => 'El campo :attribute debe contener entre :min y :max elementos.',
     ],
     'boolean'              => 'El campo :attribute debe ser verdadero o falso.',
-    'confirmed'            => 'El campo confirmación de :attribute no coincide.',
+    'confirmed'            => 'El campo de confirmación de :attribute no coincide.',
     'date'                 => 'El campo :attribute no corresponde con una fecha válida.',
     'date_equals'          => 'El campo :attribute debe ser una fecha igual a :date.',
     'date_format'          => 'El campo :attribute no corresponde con el formato de fecha :format.',
@@ -44,6 +45,7 @@ return [
     'exists'               => 'El campo :attribute seleccionado no existe.',
     'file'                 => 'El campo :attribute debe ser un archivo.',
     'filled'               => 'El campo :attribute debe tener un valor.',
+    'failed'               => 'Estas credenciales no coinciden con nuestros registros.',
     'gt'                   => [
         'numeric' => 'El campo :attribute debe ser mayor a :value.',
         'file'    => 'El archivo :attribute debe pesar más de :value kilobytes.',
@@ -129,11 +131,16 @@ return [
     |
     */
 
-    'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
-    ],
+    'attributes' => [
+        'phone_number'=> 'número de teléfono',
+        'name' => 'nombre',
+        'email' => 'email',
+        'password' => 'contraseña',
+        'failed' => 'Estas credenciales no coinciden con nuestros registros.',
+        'throttle' => 'Demasiados intentos de acceso. Por favor inténtelo de nuevo en :seconds segundos.',
+        'password_confirmation' => 'Las contraseñas no coinciden.'
+        
+    ]
 
     /*
     |--------------------------------------------------------------------------
@@ -146,6 +153,6 @@ return [
     |
     */
 
-    'attributes' => [],
+    
 
 ];

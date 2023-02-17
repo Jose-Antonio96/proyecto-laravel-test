@@ -22,13 +22,19 @@
 		<div>
 			Rellene los campos que necesite
 		</div>
-    <form action="{{route('searchpage.result')}}" method="GET" role="search">
+		@if(session('status'))
+		<div class="status">
+			{{session('status')}} <br>
+		</div>
+		@endif
+    <form action="{{route('searchpage.result')}}" method="GET" role="result">
 		@csrf
 		@include('traveliens.search-form-fields')
 		
 		<button type="submit">Iniciar búsqueda</button>
 		<br>
 	</form><br>
+	
 </x-layouts.app>
 
 
