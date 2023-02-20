@@ -1,41 +1,38 @@
 
-<nav class="items-center flex justify-between text-gray-500 hover:text-gray-700 focus:text-gray-700">
-  <div>
-    <div class="container-fluid flex mx-6">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      
-      <a href="{{route ('searchpage') }}"> 
-        <button class="text-4xl border-4 border-[#181818] rounded-full bg-[#d53046] text-white font-bold shadow-md hover:shadow-lg focus:bg-[#f87721] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#f87721] active:shadow-lg transition duration-150 ease-in-out py-4 px-20 ml-12 my-7 mr-12">
-        Búsqueda
-      </button>
-    </a>
-     
+<nav class="relative text-gray-500 hover:text-gray-700 focus:text-gray-700">
 
-      <div class="ml-6 px-6 text-2xl container-fluid flex justify-center">
+  <div class="grid grid-cols py-4 flex justify-around">
 
+    <ul class="grid grid-cols-1 md:grid-cols-2 text-2xl hidden xl:block">
+       
+          <a href="{{route ('searchpage') }}"> 
+            <button class="inline-block align-middle text-3xl border-4 border-[#181818] rounded-full bg-[#d53046] text-white font-bold shadow-md hover:shadow-lg focus:bg-[#f87721] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#f87721] active:shadow-lg transition duration-150 ease-in-out py-3 px-12 m-4 text-center">
+            Búsqueda
+          </button>
+        </a>
         <a href="{{route ('account') }}">
-          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-12 rounded-full m-10">
+          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-10 rounded-full m-3">
             Cuenta
           </button>
         </a>
       
 
         <a href="{{route ('backend') }}">
-          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-12 rounded-full m-10">
+          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-10 rounded-full m-3">
           Backend
           </button>
         </a>
       
       @guest
       <a href="{{route ('register') }}">
-          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-12 rounded-full m-10">
+          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-10 rounded-full m-3">
           Registrarse
         </button>
       </a>
       
 
         <a href="{{route ('login') }}">
-          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-12 rounded-full m-10">
+          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-10 rounded-full m-3">
           Login
         </button>
       </a>
@@ -44,19 +41,87 @@
       @endguest
       @auth 
 
-      <a href="account" class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-12 rounded-full m-10">{{ Auth::user()->name}}</a>
+      <a href="account" class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3">{{ Auth::user()->name}}</a>
         <form action="{{route('logout')}}" method="POST">
           @csrf
-          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-12 rounded-full m-10">Logout</button>
+          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3">Logout</button>
       </form>
         @endauth
       
         <a href="{{route ('help') }}">
-          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-12 rounded-full m-10">
+          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3">
           Ayuda
         </button>
-      </a>  
-    </div>
+        </a>  
+  </ul>
+
+  </div>
+      <div class="px-4 cursor-pointer xl:hidden items-center" id="burger">
+        <svg class="w-12 stroke-[#f87721] bg-[#181818] rounded-lg my-5 ml-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </div>
+
+    <ul class="grid grid-cols-1 md:grid-cols-2 items-center ml-6 px-6 text-2xl xl:hidden xl:block bg-[#181818]" id="menu">
+       
+        <a class="m-2" href="{{route ('searchpage') }}"> 
+          <p class="text-[#f87721]">
+          Búsqueda
+          </p>
+      </a>
+
+      <a class="m-2" href="{{route ('account') }}">
+          <p class="text-[#f87721]">
+          Cuenta
+          </p>
+        
+      </a>
+    
+
+      <a class="m-2" href="{{route ('backend') }}">
+          <p class="text-[#f87721]">
+        Backend
+          </p>
+      </a>
+    
+    @guest
+    <a class="m-2" href="{{route ('register') }}">
+          <p class="text-[#f87721]">
+        Registrarse
+          </p>
+    </a>
+    
+
+      <a class="m-2" href="{{route ('login') }}">
+          <p class="text-[#f87721]">
+        Login
+          </p>
+    </a>
+
+    
+    @endguest
+    @auth 
+
+    <a href="account" class="m-2 bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-12 rounded-full">{{ Auth::user()->name}}</a>
+      <form action="{{route('logout')}}" method="POST">
+        @csrf
+        <p class="text-[#f87721]">
+        Logout
+      </p>
+    </form>
+      @endauth
+    
+      <a class="m-2" href="{{route ('help') }}">
+          <p class="text-[#f87721]">
+        Ayuda
+        </p>
+        </a>  
+      </ul>
     </div>
   </div>
+    <script src="burger.js"></script>
+</div>
+
+
+
 </nav>
