@@ -85,7 +85,7 @@ Route::get('/travelpage/{{name}}', [TravelpageController::class, 'travel'])->nam
 
 Route::get("/account", [AccountController::class, 'show'])->name('account');
 
-Route::get("/account/{user}", [AccountController::class, 'show'])->name('dbuser');
+Route::get("/account/{user}", [DBController::class, 'show'])->name('account');
 
 Route::get("/account/{user}/update", [AccountController::class, 'update'])->name('account.update');
 
