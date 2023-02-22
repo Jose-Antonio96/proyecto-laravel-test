@@ -66,6 +66,8 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 
 Route::view('/register', 'auth.register')->name('register');
 
+Route::get("/travelpage/{name}", [TravelpageController::class, 'travel'])->name('travel');
+
 Route::post('/register', [RegistereduserController::class, 'store']);
 
 Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
@@ -83,7 +85,7 @@ Route::get('/travelpage/{{name}}', [TravelpageController::class, 'travel'])->nam
 
 Route::get("/account", [AccountController::class, 'show'])->name('account');
 
-Route::get("/account/{user}", [DBController::class, 'show'])->name('dbuser');
+Route::get("/account/{user}", [AccountController::class, 'show'])->name('dbuser');
 
 Route::get("/account/{user}/update", [AccountController::class, 'update'])->name('account.update');
 

@@ -3,5 +3,5 @@
 		meta-description="Página viaje meta description"
 		>
 		
-	Esta es la página de viaje de Traveliens
+	{{$trav->name}}
 </x-layouts.app>

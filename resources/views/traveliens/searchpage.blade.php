@@ -28,23 +28,23 @@
 		</div>
 
 		@endif
-    <form action="{{route('searchpage.result')}}" method="GET" role="result">
-		@csrf
-		@include('traveliens.search-form-fields')
-		
-		<button type="submit">Iniciar búsqueda</button>
-		<br>
+    
 	</form><br><form action="{{route('searchpage.result')}}" method="GET">
 		@include('traveliens.search-form-fields')
 			<button type="submit">Iniciar búsqueda</button>
 			<br>
 		</form><br>
-		
+	<ul>
 		@if(isset($travel))
 			@foreach ($travel as $trav)
-				{{$trav->name}}
+				
+				<li><a href="{{route ('travel', $trav->name) }}">
+					{{$trav->name}}</a></li>
+				
 			@endforeach
 		@endif
+	</ul>
+
 	
 	
 </x-layouts.app>

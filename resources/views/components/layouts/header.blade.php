@@ -42,7 +42,7 @@
       @endguest
       @auth 
 
-      <a href="account" class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3">{{ Auth::user()->name}}</a>
+      <a href="{{route("account")}}" class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3">{{ Auth::user()->name}}</a>
       <button class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3">
         <form action="{{route('logout')}}" method="POST">
             @csrf
@@ -105,7 +105,7 @@
     @endguest
     @auth 
 
-    <a href="account" class="m-2 "><p class="text-[#f87721]">{{ Auth::user()->name}}</p></a>
+    <a href="{{route("account")}}" class="m-2 "><p class="text-[#f87721]">{{ Auth::user()->name}}</p></a>
       <form action="{{route('logout')}}" method="POST">
         @csrf
         <form action="{{route('logout')}}" method="POST">

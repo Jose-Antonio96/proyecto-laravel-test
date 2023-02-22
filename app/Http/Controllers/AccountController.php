@@ -12,10 +12,6 @@ class AccountController extends Controller
         $this->middleware('auth', ['except' =>['show']]);
     }
 
-    public function login(){
-        
-    }
-
     public function update(User $user){
         return view('traveliens.update', ['user' => $user]);
 
