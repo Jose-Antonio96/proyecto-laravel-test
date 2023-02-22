@@ -79,7 +79,7 @@ Route::get("/searchpage/result", [SearchPageController::class, 'result'])->name(
 
 Route::get("/help", HelpController::class)->name('help');
 
-Route::get('/travelpage', TravelpageController::class)->name('travelpage');
+Route::get('/travelpage/{{name}}', [TravelpageController::class, 'travel'])->name('travelpage');
 
 Route::get("/account", [AccountController::class, 'show'])->name('account');
 

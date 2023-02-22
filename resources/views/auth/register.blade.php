@@ -7,7 +7,7 @@
 
 	
 
-    <form action="{{route('register')}}" method="POST">
+    <form action="{{route('register')}}" method="POST" enctype="multipart/form-data">
 		@csrf
 
 		<label class="flex flex-col">
@@ -29,6 +29,12 @@
 	@enderror
 
 </label><br>
+
+		<label>
+		Imagen de perfil
+	<input type="file" class="form-control" name="image" />
+</label><br>
+
 {{--}}
 </label><br>
 		<label class="flex flex-col">

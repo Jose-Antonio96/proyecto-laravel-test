@@ -1,21 +1,22 @@
 
 <nav class="relative text-gray-500 hover:text-gray-700 focus:text-gray-700">
 
-  <div class="grid grid-cols py-4 flex justify-around">
+  <div class="items-center py-4 flex justify-center">
 
-    <ul class="grid grid-cols-1 md:grid-cols-2 text-2xl hidden xl:block">
+    <ul class="grid grid-cols-1 text-2xl hidden xl:block">
        
           <a href="{{route ('searchpage') }}"> 
             <button class="inline-block align-middle text-3xl border-4 border-[#181818] rounded-full bg-[#d53046] text-white font-bold shadow-md hover:shadow-lg focus:bg-[#f87721] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#f87721] active:shadow-lg transition duration-150 ease-in-out py-3 px-12 m-4 text-center">
             Búsqueda
           </button>
         </a>
-        <a href="{{route ('account') }}">
-          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-10 rounded-full m-3">
-            Cuenta
-          </button>
-        </a>
-      
+        
+          <a href="{{route ('mainpage') }}">
+            <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-10 rounded-full m-3">
+              Home
+            </button>
+          </a>
+        
 
         <a href="{{route ('backend') }}">
           <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-10 rounded-full m-3">
@@ -42,11 +43,13 @@
       @auth 
 
       <a href="account" class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3">{{ Auth::user()->name}}</a>
+      <button class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3">
         <form action="{{route('logout')}}" method="POST">
-          @csrf
-          <button class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3">Logout</button>
-      </form>
-        @endauth
+            @csrf
+            Logout
+        </form>
+      </button>
+          @endauth
       
         <a href="{{route ('help') }}">
           <button class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3">
@@ -70,9 +73,9 @@
           </p>
       </a>
 
-      <a class="m-2" href="{{route ('account') }}">
+      <a class="m-2" href="{{route ('mainpage') }}">
           <p class="text-[#f87721]">
-          Cuenta
+          Home
           </p>
         
       </a>
@@ -102,14 +105,14 @@
     @endguest
     @auth 
 
-    <a href="account" class="m-2 bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-12 rounded-full">{{ Auth::user()->name}}</a>
+    <a href="account" class="m-2 "><p class="text-[#f87721]">{{ Auth::user()->name}}</p></a>
       <form action="{{route('logout')}}" method="POST">
         @csrf
-        <p class="text-[#f87721]">
-        Logout
-      </p>
-    </form>
-      @endauth
+        <form action="{{route('logout')}}" method="POST">
+          @csrf
+          <button class="m-2 text-[#f87721]">Logout</button>
+      </form>
+        @endauth
     
       <a class="m-2" href="{{route ('help') }}">
           <p class="text-[#f87721]">

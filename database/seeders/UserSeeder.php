@@ -21,8 +21,6 @@ class UserSeeder extends Seeder
         $user -> email = "admin@miappcom2";
         $user-> phone_number = 12313012;
         $user-> administrator = true;
-        $user-> PostalCode = "123913";
-        $user-> Address = "Fran de la chuta número 12";
         $user ->password = "woahsafe2";
         $user->save();
         /*

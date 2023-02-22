@@ -36,7 +36,7 @@ Esto iría dentro del $slot en layout.blade en components
 	</figure>
 </div>
 		
-<div class="m-3 w-480 md:w-320 lg:w-480 flex justify-items-center md grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
+<div class="m-3 flex justify-items-center md grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
 	
 	<a href="#" class="group relative block bg-black m-3">
 		<img

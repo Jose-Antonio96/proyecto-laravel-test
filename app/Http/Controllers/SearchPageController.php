@@ -14,14 +14,14 @@ class SearchPageController extends Controller
 
     public function result(Request $request){
 
-        $travel = $request->input('searchpage.result');
+        $travel = $request->input('name');
 
         $travel = Travel::query()
         ->where('name', 'LIKE', "%{$travel}%")
         ->get();
         
             
-        return view('searchpage.result', compact('travel'));
+        return view('traveliens.searchpage', compact('travel'));
     
  
     }

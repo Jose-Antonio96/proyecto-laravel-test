@@ -26,6 +26,7 @@
 		<div class="status">
 			{{session('status')}} <br>
 		</div>
+
 		@endif
     <form action="{{route('searchpage.result')}}" method="GET" role="result">
 		@csrf
@@ -33,7 +34,17 @@
 		
 		<button type="submit">Iniciar búsqueda</button>
 		<br>
-	</form><br>
+	</form><br><form action="{{route('searchpage.result')}}" method="GET">
+		@include('traveliens.search-form-fields')
+			<button type="submit">Iniciar búsqueda</button>
+			<br>
+		</form><br>
+		
+		@if(isset($travel))
+			@foreach ($travel as $trav)
+				{{$trav->name}}
+			@endforeach
+		@endif
 	
 	
 </x-layouts.app>

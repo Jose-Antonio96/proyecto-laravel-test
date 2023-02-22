@@ -25,10 +25,11 @@
 		<ul>
 			@foreach($users as $user)
 				<div>
-					<li><a href="{{route ('dbuser', $user) }}">
+					<a href="{{route ('dbuser', $user) }}">
 						{{$user->name}}</a></li>
 						@auth
 					<a href="{{route ('account.update', $user) }}">Actualizar datos</a> &nbsp; {{--Esto añade un espacio en blanco--}}
+					<img src="{{ asset('images/' . $user->image) }}" />
 
 					<form action="{{route ('account.delete', $user) }}" method="POST">
 						@csrf 

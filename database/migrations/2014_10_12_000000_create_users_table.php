@@ -23,15 +23,13 @@ return new class extends Migration
             */
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->bigInteger('phone_number')->unique();
+            $table->bigInteger('phone_number')->unique()->nullable();
             /*
             $table->unsignedBigInteger('travel_id');
             $table->foreign('travel_id')->references('id')->on('travels');
             */
-            $table->boolean('administrator');
+            $table->boolean('administrator')->nullable();
             $table->string('image')->nullable();
-            $table->string('PostalCode', 10);
-            $table->string('Address', 30);
             $table->string('password');
             $table->rememberToken()->nullable(); 
             $table->timestamps();
