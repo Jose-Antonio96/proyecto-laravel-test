@@ -20,11 +20,10 @@
 		</div>
 		@endif
 		
-        Usuario
 		
 		<ul>
 			@foreach($users as $user)
-				<div>
+				<div class="text-3xl">
 					<a href="{{route ('dbuser', $user) }}">
 						<li>{{$user->name}}</a></li>
 						<li>{{$user->email}}</a></li>
@@ -40,7 +39,7 @@
 				</div>
 		</ul>
 		@endforeach
-		
-		{{$users->links()}}
+	
+	
 		
 	</x-layouts.app>

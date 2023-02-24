@@ -22,7 +22,9 @@ class FormController extends Controller
         $account -> name = $request->input('name');
         $account -> email = $request->input('email');
         $account -> password = $request->input('password');
+        $account -> image = $imageName;
         $account -> save();
+        
         */
         User::create($request->validated());
 

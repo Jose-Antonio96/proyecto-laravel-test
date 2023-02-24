@@ -40,15 +40,18 @@
 
       
       @endguest
+
       @auth 
 
       <a href="{{route("account")}}" class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3">{{ Auth::user()->name}}</a>
-      <button class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3">
-        <form action="{{route('logout')}}" method="POST">
+      
+      
+        <form class="inline-block" action="{{route('logout')}}" method="POST">
             @csrf
-            Logout
+            <input type="submit" class="bg-[#1b9df0] hover:bg-[#f87721] text-[#181818] font-bold py-3 px-10 rounded-full m-3" value="Logout">
+            
         </form>
-      </button>
+      
           @endauth
       
         <a href="{{route ('help') }}">
@@ -106,8 +109,6 @@
     @auth 
 
     <a href="{{route("account")}}" class="m-2 "><p class="text-[#f87721]">{{ Auth::user()->name}}</p></a>
-      <form action="{{route('logout')}}" method="POST">
-        @csrf
         <form action="{{route('logout')}}" method="POST">
           @csrf
           <button class="m-2 text-[#f87721]">Logout</button>

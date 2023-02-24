@@ -21,8 +21,16 @@ class RegisteredUserController extends Controller
       // Public Folder
       $request->image->move(public_path('images/'), $imageName);
 
+    $account = new User;
+    $account -> name = $request->name;
+    $account -> email = $request->email;
+    $account -> password = $request->password;
+    $account -> image = $imageName;
+    $account -> save();
+
+        /*
         User::create($request->validated());
-        
+        */
         /*
         Auth::login($user);
         */

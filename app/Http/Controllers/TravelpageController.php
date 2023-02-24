@@ -7,9 +7,10 @@ use App\Models\Travel;
 
 class TravelpageController extends Controller
 {
-    public function travel($name){
+    public function travel(Request $request){
         
-            $travel = Travel::whereId($name)->get()->first();
+        
+            $travel = Travel::whereId($request->travel)->get()->first();
             return view('traveliens.travelpage', compact('travel'));   
         }
 }

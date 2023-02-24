@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\SaveUserRequest;
+use Auth;
 
 class AccountController extends Controller
 {
@@ -54,7 +55,7 @@ class AccountController extends Controller
     public function delete(User $user){
         $user->delete();
 
-        return to_route('account')->with('status', 'Cuenta eliminada con éxito');
+        return view('traveliens.mainpage')->with('status', 'Cuenta eliminada con éxito');
     }
 }
 

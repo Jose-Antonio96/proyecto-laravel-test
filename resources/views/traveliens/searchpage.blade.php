@@ -29,7 +29,7 @@
 
 		@endif
     
-	</form><br><form action="{{route('searchpage.result')}}" method="GET">
+	<form action="{{route('searchpage.result')}}" method="GET">
 		@include('traveliens.search-form-fields')
 			<button type="submit">Iniciar búsqueda</button>
 			<br>
@@ -37,9 +37,13 @@
 	<ul>
 		@if(isset($travel))
 			@foreach ($travel as $trav)
-				
-				<li><a href="{{route ('travel', $trav->name) }}">
-					{{$trav->name}}</a></li>
+		<li>
+			<form action="{{route('travel')}}" method="GET">
+				<input type="hidden" name="travel" value="{{$trav->id}}">
+				<input type="submit" value="{{$trav->name}}">
+			</form>
+			</li>
+			
 				
 			@endforeach
 		@endif
