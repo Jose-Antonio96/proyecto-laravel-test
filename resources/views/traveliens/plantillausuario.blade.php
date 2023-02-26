@@ -21,8 +21,7 @@
 		@endif
 		
 		
-		<ul>
-			@foreach($users as $user)
+		
 				<div class="text-3xl">
 					<a href="{{route ('dbuser', $user) }}">
 						<li>{{$user->name}}</a></li>
@@ -35,10 +34,15 @@
 						@csrf 
 						@method('DELETE')
 						<button type="submit">Eliminar cuenta</button>
+
+						
 					</form><br>
+
+					<br><a href="{{route ('travel.store') }}">Crear viaje</a>
+
+					<br><a href="{{route ('travel.show') }}">Ver viajes</a>
 				</div>
-		</ul>
-		@endforeach
+		
 	
 	
 		

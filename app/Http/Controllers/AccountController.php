@@ -47,9 +47,9 @@ class AccountController extends Controller
 
     public function show(){
 
-        $users = User::paginate(10);
+        $user = auth()->user();
             
-        return view('traveliens.plantillausuario', compact('users')); 
+        return view('traveliens.plantillausuario', compact('user')); 
     }
 
     public function delete(User $user){
