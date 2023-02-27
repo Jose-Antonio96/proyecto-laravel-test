@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Travel;
+use App\Http\Controllers\Auth;
 
 class TravelpageController extends Controller
 {
@@ -18,11 +19,19 @@ class TravelpageController extends Controller
         
         $request-> validate([
             'name' => ['required', 'max:100'],
-            'location' => ['required', 'max:'],            'description' => ['required', 'max:
+            'location' => ['required', 'max:'],            
+            'description' => ['required', 'max:'],
+            '' => ['required', 'max:'],
+            '' => ['required', 'max:'],
+            '' => ['required', 'max:'],
+            '' => ['required', 'max:'],
+
         ]);
         
         $travel = new Travel;
         $travel -> name = $request->input('name');
+        $travel-> user_id = $request -> Auth::user()->id;
+        $travel-> tags_id = $request-> tags_id;
         $travel -> location = $request->input('location');
         $travel -> description = $request->input('description');
         $travel -> starts = $request->input('starts');

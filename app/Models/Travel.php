@@ -4,20 +4,27 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+Use Illuminate\Contracts\Auth\Authenticatable;
 
 class Travel extends Model
 {
     use HasFactory;
 
-
     protected $table = 'travels';
-    /*
-    public function tags(){
-        return $this->belongsToMany(Travel::class);
+
+    public function User(){
+        return $this->belongsTo(User::class);
         
     }
-    Esto no haría falta con la foreign key en la migración de travels
-    */
+
+    public function Tag(){
+        return $this->belongsToMany(User::class);
+    }
+
+    public function index(Authenticatable $user){
+        return $user -> id;
+    }
+    
 
 }
 //Con esto ya se conecta automaticamente con la tabla de la base de datos

@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Travel;
+use App\Models\Tag;
 
 class User extends Authenticatable
 {
@@ -44,14 +47,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         //Esto lo que hace es cambiar la variable a otra, en este caso a un datetime para que la base de datos pueda usarlo
     ];
-    /*
-    public function tags(){
-        return $this->belongsToMany(tag::class);
+    
+    public function Tag(){
+        return $this->belongsToMany(Tag::class);
+
+    }
+    
+    public function Travel(){
+        return $this->hasMany(Travel::class);
     }
 
-    public function travels(){
-        return $this->hasMany(travel::class);
+    public function addTravel(Travel $travel){
+        return $this->add($travel->id);
     }
-    */
+
     
 }

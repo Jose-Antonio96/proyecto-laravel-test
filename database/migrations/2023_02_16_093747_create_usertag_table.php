@@ -14,10 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('usertag', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('user_id',);
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('tag_id');
-            $table->foreign('tag_id')->references('id')->on('tags');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
             $table->timestamps();
             //Las foreign keys aplican restricciones de datos
             // SQLSTATE[HY000]: General error: 3780 Referencing column 'user_id' and referenced column 'id' 
