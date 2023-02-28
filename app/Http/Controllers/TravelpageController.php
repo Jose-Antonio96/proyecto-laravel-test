@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Travel;
-use App\Http\Controllers\Auth;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class TravelpageController extends Controller
 {
@@ -15,34 +17,40 @@ class TravelpageController extends Controller
             return view('traveliens.travelpage', compact('travel'));   
         }
 
-    public function store(Request $request){
+    public function createTravel(Request $request){
         
-        $request-> validate([
+        if (!Auth::check())
+            return redirect(route("login"));
+        
+        $data = $request-> validate([
             'name' => ['required', 'max:100'],
-            'location' => ['required', 'max:'],            
-            'description' => ['required', 'max:'],
-            '' => ['required', 'max:'],
-            '' => ['required', 'max:'],
-            '' => ['required', 'max:'],
-            '' => ['required', 'max:'],
+            'location' => ['required', 'max:40'],            
+            'description' => ['required', 'max:3000'],
+            'image' => ['required|file'],
+            'starts' => ['required|date|after:tomorrow'],
+            'finishes' => ['required|date|after:start_date'],
+            'sponsored' => ['required|boolean'],
+            'professional' => ['required|boolean'],
+            'price' => ['required', 'max:10']
 
         ]);
+
+        $user = Auth::user();
+
+        Travel::create($data['name'], 
+        $data['location'], 
+        $data['description'], 
+        $data['image'], 
+        $data['starts'], 
+        $data['finishes'], 
+        $data['sponsored'], 
+        $data['professional'], 
+        $data['price'], 
+        $user); 
+
         
-        $travel = new Travel;
-        $travel -> name = $request->input('name');
-        $travel-> user_id = $request -> Auth::user()->id;
-        $travel-> tags_id = $request-> tags_id;
-        $travel -> location = $request->input('location');
-        $travel -> description = $request->input('description');
-        $travel -> starts = $request->input('starts');
-        $travel -> finishes = $request->input('finishes');
-        $travel -> sponsored = $request->input('sponsored');
-        $travel -> professional = $request->input('professional'); 
-        $travel -> price = $request->input('price'); 
 
-        $travel-> save();
-
-        return view('traveliens.createtravel');
+        return redirect(route('createTravel'))->with('status', 'success');
     }
 
     public function show(){

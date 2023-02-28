@@ -66,15 +66,15 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 
 Route::view('/register', 'auth.register')->name('register');
 
-Route::post('/register', [RegistereduserController::class, 'store']);
+Route::get('/register', [RegistereduserController::class, 'store']);
 
 Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 
-Route::get('/travelpage/create', [TravelpageController::class, 'store'])->name('travel.store');
+Route::get('/travelpage', [TravelpageController::class, 'travel'])->name('travel');
+
+Route::get('/travelpage/create', [TravelpageController::class, 'createTravel'])->name('createTravel');
 
 Route::get('/travelpage/show', [TravelpageController::class, 'show'])->name('travel.show');
-
-Route::get('/travelpage', [TravelpageController::class, 'travel'])->name('travel');
 
 Route::get("/home", HomeController::class)->name('home');
 //Route::get("/home", "App\Http\Controllers\HomeController")->name('home'); No es una buena prática

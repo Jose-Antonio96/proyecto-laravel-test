@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 Use Illuminate\Contracts\Auth\Authenticatable;
+use App\Models\User;
+use Ramsey\Uuid\Type\Integer;
 
 class Travel extends Model
 {
@@ -21,10 +23,22 @@ class Travel extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function index(Authenticatable $user){
-        return $user -> id;
+    public static function create(string $name, string $location, string $description, bool $sponsored, string $image, int $starts, int $finishes, bool $professional, string $price, User $user ){
+
+        $newTravel = new Travel();
+        $newTravel -> name = $name;
+        $newTravel -> location = $location;
+        $newTravel -> description = $description;
+        $newTravel -> sponsored = $sponsored;
+        $newTravel -> image = $image;
+        $newTravel -> starts = $starts;
+        $newTravel -> finishes = $finishes;
+        $newTravel ->professional = $professional;
+        $newTravel -> price = $price;
+        $newTravel->user()->associate($user);
+
+        $newTravel->save();
     }
-    
 
 }
 //Con esto ya se conecta automaticamente con la tabla de la base de datos

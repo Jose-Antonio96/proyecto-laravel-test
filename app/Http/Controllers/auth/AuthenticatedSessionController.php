@@ -4,9 +4,9 @@ namespace App\Http\Controllers\auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Console\View\Components\Warn;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+
 
 class AuthenticatedSessionController extends Controller
 {

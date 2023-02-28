@@ -38,7 +38,7 @@
 						
 					</form><br>
 
-					<br><a href="{{route ('travel.store') }}">Crear viaje</a>
+					<br><a href="{{route ('createTravel') }}">Crear viaje</a>
 
 					<br><a href="{{route ('travel.show') }}">Ver viajes</a>
 				</div>

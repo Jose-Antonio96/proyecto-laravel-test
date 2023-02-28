@@ -22,26 +22,16 @@
     <small>*{{$message}}</small>
     @enderror
     <label>
-    {{--Esto tiene que ser un checkmark--}}
-    ¿Quieres que sea esponsorizado? <br>
-    <input name="sponsor" type="text" value="{{old('description', $travel->description)}}">
-    @error('sponsor')
-    <br>
-    <small>*{{$message}}</small>
-    @enderror
-    </label><br>
     
+    Marca la casilla si quieres que sea esponsorizado. <br>
+    <input name="sponsor" type="checkbox">
+    </label><br>
     
     <label>
-    {{--Esto tiene que ser un checkmark--}}
-    ¿Viaje de empresa profesional?<br>
-    <input name="description" type="text" value="{{old('description', $travel->description)}}">
-    @error('description')
-    <br>
-    <small>*{{$message}}</small>
-    @enderror
-    </label><br>
     
+    Marca la casilla si es un viaje profesional.<br>
+    <input name="professional" type="checkbox">
+    </label><br>
     
     <label>
     Precio por cliente <br>
