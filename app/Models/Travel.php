@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 Use Illuminate\Contracts\Auth\Authenticatable;
 use App\Models\User;
-use Ramsey\Uuid\Type\Integer;
 
 class Travel extends Model
 {

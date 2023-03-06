@@ -66,7 +66,7 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 
 Route::view('/register', 'auth.register')->name('register');
 
-Route::get('/register', [RegistereduserController::class, 'store']);
+Route::post('/register', [RegistereduserController::class, 'store']);
 
 Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 

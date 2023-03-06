@@ -12,7 +12,7 @@ class TravelpageController extends Controller
 {
     public function travel(Request $request){
         
-        
+       
             $travel = Travel::whereId($request->travel)->get()->first();
             return view('traveliens.travelpage', compact('travel'));   
         }
@@ -49,8 +49,8 @@ class TravelpageController extends Controller
         $user); 
 
         
-
-        return redirect(route('createTravel'))->with('status', 'success');
+        
+        return redirect(route('traveliens.plantillausuario'))->with('status', 'success');
     }
 
     public function show(){

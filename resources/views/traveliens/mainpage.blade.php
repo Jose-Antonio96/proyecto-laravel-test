@@ -40,7 +40,7 @@ Esto iría dentro del $slot en layout.blade en components
 	
 	<a href="#" class="group relative block bg-black m-3">
 		<img
-		  alt="Developer"
+		  alt="Anthrax_Stage"
 		  src="images/Anthrax_image.jpg"
 		  class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
 		/>

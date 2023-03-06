@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\SaveUserRequest;
 use Auth;
-use Illuminate\Routing\Controller;
 
 class AccountController extends Controller
 {
