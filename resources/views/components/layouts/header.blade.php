@@ -18,7 +18,7 @@
           </a>
         
 
-        <a href="{{route ('backend') }}">
+        <a href="{{route ('backend.index') }}">
           <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-10 rounded-full m-3">
           Backend
           </button>
@@ -84,7 +84,7 @@
       </a>
     
 
-      <a class="m-2" href="{{route ('backend') }}">
+      <a class="m-2" href="{{route ('backend.index') }}">
           <p class="text-[#f87721]">
         Backend
           </p>

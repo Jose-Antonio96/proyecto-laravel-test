@@ -16,7 +16,23 @@ class TagSeeder extends Seeder
     public function run()
     {
         $tag = new Tag();
+        $tag -> tags = "Concierto";
+        $tag -> save();
+
+        $tag = new Tag();
+        $tag -> tags = "Metal";
+        $tag -> save();
+
+        $tag = new Tag();
         $tag -> tags = "Torneo";
+        $tag -> save();
+
+        $tag = new Tag();
+        $tag -> tags = "Cartas";
+        $tag -> save();
+
+        $tag = new Tag();
+        $tag -> tags = "Música";
         $tag -> save();
 
     }

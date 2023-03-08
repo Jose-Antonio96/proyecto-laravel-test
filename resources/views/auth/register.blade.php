@@ -64,6 +64,13 @@
 		<small>*{{$message}}</small>
 	@enderror
 
+
+</label><br>
+
+<label class="flex flex-col">
+	¿Busca ser organizador? (Opcional)
+	<input type="checkmark" class="fo
+
 </label><br>
 		<button type="submit">Registrar</button>
 		<br>

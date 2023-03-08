@@ -25,7 +25,6 @@ class TravelSeeder extends Seeder
         $travel -> sponsored = true;
         $travel-> professional = true;
         $travel-> price = "20 euros";
-        $travel-> organizer = "Manuel Cobos de la Piedra, Industris S.A.";
         $travel->save();
     }
 }

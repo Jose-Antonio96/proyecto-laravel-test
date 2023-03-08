@@ -72,7 +72,9 @@ Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 
 Route::get('/travelpage', [TravelpageController::class, 'travel'])->name('travel');
 
-Route::get('/travelpage/create', [TravelpageController::class, 'createTravel'])->name('createTravel');
+Route::post('/travelpage/create', [TravelpageController::class, 'createTravel'])->name('createTravelForm');
+
+Route::view("/travelpage/create", "traveliens.createtravel")->name('createTravel');
 
 Route::get('/travelpage/show', [TravelpageController::class, 'show'])->name('travel.show');
 
@@ -102,7 +104,9 @@ Route::post("/CreateAccount" , [FormController::class, 'save'])->name('form.save
 Route::get("/searchuser/{name}", [DBuserresult::class, 'show'])->name('dbuser');
 */
 
-Route::get("/backend", BackendController::class)->name('backend')->middleware('auth');
+Route::get("/backend", [BackendController::class, 'index'])->name('backend.index');
+
+Route::get("/backend/tags", [BackendController::class, 'show'])->name('backend.show');
 
 Route::get('{noexiste?}', function ($noexiste) {
     if($noexiste)

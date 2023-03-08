@@ -32,7 +32,6 @@ return new class extends Migration
             
             $table->boolean('professional');
             $table->string('price', 12)->nullable();
-            $table->string('organizer', 60);
             $table->rememberToken()->nullable();
             $table->timestamps();
 
