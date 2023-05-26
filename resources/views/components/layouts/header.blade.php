@@ -25,7 +25,7 @@
         </a>
       
       @guest
-      <a href="{{route ('register') }}">
+      <a href="{{route ('account_choose') }}">
           <button class="bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-3 px-10 rounded-full m-3">
           Registrarse
         </button>
@@ -91,11 +91,6 @@
       </a>
     
     @guest
-    <a class="m-2" href="{{route ('register') }}">
-          <p class="text-[#f87721]">
-        Registrarse
-          </p>
-    </a>
     
 
       <a class="m-2" href="{{route ('login') }}">

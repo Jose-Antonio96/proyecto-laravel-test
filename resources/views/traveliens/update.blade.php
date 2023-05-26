@@ -11,4 +11,6 @@
 			<button type="submit">Finalizar</button>
 		</form>
 
+		<br><a href="{{route ('account') }}">Regresar</a>
+
 </x-layouts.app>

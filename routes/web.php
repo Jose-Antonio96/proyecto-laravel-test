@@ -58,6 +58,9 @@ Route::get("/{seccion}", function ($seccion) {
         return "esta es la seccion $seccion del blog";
 });
 */
+
+Route::view('/account_choose', 'traveliens.account_choose' )->name('account_choose');
+
 Route::view('/login', 'auth.login')->name('login');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
