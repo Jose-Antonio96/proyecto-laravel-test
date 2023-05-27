@@ -5,10 +5,10 @@
 		
         <div class="flex justify-center">
 			<div class="place-content-center">
-				Escoja el tipo de cuenta que desea<br>
-		<a class="btn m-3" href="{{route ('register') }}">Regresar</a>
+				<p class="text-center">Escoja el tipo de cuenta que desea<p><br>
+		<a class="btn m-3" href="{{route ('register') }}">Usuario normal</a>
 
-		<a class="btn m-3" href="{{route ('register') }}">Regresar</a><br>
+		<a class="btn m-3" href="{{route ('register_org') }}">Usuario organizador</a><br>
 
 			</div>
 		</div>

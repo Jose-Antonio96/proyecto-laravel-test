@@ -3,7 +3,7 @@
 		meta-description="Página de registro meta description"
 		>
 		
-	Esta es la página de registro de Traveliens
+	Crear cuenta de usuario 
 
 	
 

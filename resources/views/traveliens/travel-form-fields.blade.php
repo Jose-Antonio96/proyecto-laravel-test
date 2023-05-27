@@ -23,7 +23,7 @@
     <small>*{{$message}}</small>
     @enderror
     </label><br>
-
+{{--
     <div class="container">
         <div class="row">
             <div class="col-sm">
@@ -45,7 +45,7 @@
     </div><br>
 
     <label>
-    
+
     Marca la casilla si quieres que sea esponsorizado. <br>
     <input name="sponsored" type="checkbox">
     </label><br>
@@ -64,4 +64,4 @@
     <small>*{{$message}}</small>
     @enderror
     </label><br>
-    
+    --}}

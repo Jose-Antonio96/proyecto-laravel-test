@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('name',100);
             $table->string('location', 40 ); 
             $table->longText('description');
-            $table->boolean('sponsored');
+            /*--$table->boolean('sponsored');*/
             $table->string('image')->nullable();
             $table->timestamp('starts')->nullable();
             $table->timestamp('finishes')->nullable();

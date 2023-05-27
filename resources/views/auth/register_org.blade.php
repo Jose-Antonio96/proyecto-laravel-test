@@ -3,7 +3,7 @@
 		meta-description="Página de registro meta description"
 		>
 		
-	Esta es la página de registro de Traveliens
+	Crear cuenta de organizador 
 
 	
 
@@ -77,5 +77,6 @@
 		<br>
 	</form><br>
     <a href="{{route ('login') }}">Login</a>
+	
 	
 </x-layouts.app>

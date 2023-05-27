@@ -34,11 +34,15 @@ class DatabaseSeeder extends Seeder
         ]);
         */
         
-        $this->call([UserSeeder::class]);
+        
         
         $this->call([TravelSeeder::class]);
 
         $this->call([TagSeeder::class]);
+
+        $this->call([RoleSeeder::class]);
+
+        $this->call([UserSeeder::class]);
         
     }
     

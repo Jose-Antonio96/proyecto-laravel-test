@@ -19,9 +19,10 @@ class UserSeeder extends Seeder
         $user = new User();
         $user -> name = "Superadmin2";
         $user -> email = "admin@miappcom2";
-        $user-> phone_number = 12313012;
+        $user-> phone_number = 12341234;
         $user-> administrator = true;
-        $user ->password = "woahsafe2";
+        $user ->password = bcrypt("woahsafe2");
+        $user->assignRole('admin');
         $user->save();
         /*
         User::factory()->create([
