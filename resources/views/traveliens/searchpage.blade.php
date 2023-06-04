@@ -38,7 +38,7 @@
 		@if(isset($travel))
 			@foreach ($travel as $trav)
 		<li>
-			<form action="{{route('travel')}}" method="GET">
+			<form action="{{route('travel', $trav->id)}}" method="GET">
 				<input type="hidden" name="travel" value="{{$trav->id}}">
 				<input type="submit" value="{{$trav->name}}">
 			</form>

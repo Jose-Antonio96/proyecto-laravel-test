@@ -4,7 +4,7 @@
 		meta-description="Página formulario meta description"
 		>
 
-        <form action="{{route('createTravel')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('createTravelForm')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @include('traveliens.travel-form-fields')
             <button type="submit">Crear</button>

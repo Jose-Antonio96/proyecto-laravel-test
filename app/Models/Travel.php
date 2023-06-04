@@ -14,30 +14,12 @@ class Travel extends Model
     protected $table = 'travels';
 
     public function User(){
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class);
 
     }
 
     public function Tag(){
         return $this->belongsToMany(User::class);
-    }
-
-    public static function create(string $name, string $location, string $description, bool $sponsored, string | null $image, int | null $starts, int | null $finishes, bool $professional, string $price, User $user ){
-
-        $newTravel = new Travel();
-        $newTravel -> name = $name;
-        $newTravel -> location = $location;
-        $newTravel -> description = $description;
-        $newTravel -> sponsored = $sponsored;
-        $newTravel -> image = $image;
-        $newTravel -> starts = $starts;
-        $newTravel -> finishes = $finishes;
-        $newTravel ->professional = $professional;
-        $newTravel -> price = $price;
-        $newTravel -> organizer = "";
-        $newTravel->user()->associate($user);
-
-        $newTravel->save();
     }
 
 }

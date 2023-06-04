@@ -37,10 +37,12 @@
 
 						
 					</form><br>
+					
+    				<br><a href="{{route ('createTravelForm') }}">Crear viaje</a>
+						
+					<br><a href="{{route ('travel.show') }}">Ver viajes del usuario</a>
 
-					<br><a href="{{route ('createTravel') }}">Crear viaje</a>
-
-					<br><a href="{{route ('travel.show') }}">Ver viajes</a>
+					<br><a href="{{route ('JoinedTravels') }}">Mis viajes</a>
 				</div>
 		
 	

@@ -13,11 +13,12 @@ use App\Models\Tag;
 use Spatie\Permission\Traits\HasRoles;
 
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
     use HasRoles;
+
 
     
     /**
@@ -58,12 +59,15 @@ class User extends Authenticatable
     }
     
     public function Travel(){
-        return $this->hasMany(Travel::class);
+        return $this->belongsToMany(Travel::class);
     }
 
     public function addTravel(Travel $travel){
         return $this->add($travel->id);
     }
 
-    
+  
 }
+
+    
+

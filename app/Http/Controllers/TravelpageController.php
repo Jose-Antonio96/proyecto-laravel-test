@@ -13,10 +13,10 @@ use App\Models\Tag;
 
 class TravelpageController extends Controller
 {
-    public function travel(Request $request){
+    public function travel($id){
 
 
-            $travel = Travel::whereId($request->travel)->get()->first();
+        $travel = Travel::find($id);
             return view('traveliens.travelpage', compact('travel'));
         }
 
@@ -24,11 +24,14 @@ class TravelpageController extends Controller
 
         if (!Auth::check())
             return redirect(route("login"));
+    
 
+    if (Auth::check()) {
+        $user_id = Auth::id();
             /* Esto es para testeo
         Log::info("hello");
         Log::info($request);
-        */
+        
         $data = $request->validate([
             'name' => 'required|max:100',
             'location' => 'required|max:40',
@@ -44,29 +47,29 @@ class TravelpageController extends Controller
         Log::info("world");
         Log::info($data);
         */
-        $user = Auth::user();
+        
 
-        Travel::create($data['name'],
-        $data['location'],
-        $data['description'],
-        $data['sponsored'] ?? "off",
-        $data['image'] ?? null,
-        $data['starts'] ?? null,
-        $data['finishes'] ?? null,
-        $data['professional'] ?? "off",
-        $data['price'],
-        $user);
+        $travel = new Travel();
+        $travel -> name = $request->name;
+        $travel -> location = $request->location;
+        $travel -> description = $request->description;
+        $travel->user_id = $user_id;
+        /*
+        $travel -> starts = $request->starts;
+        $travel -> finishes = $request->finishes;
+        */
+
+        $travel-> save();
 
 
-        return redirect(route('account'))->with('status', 'success');
+        return redirect(route('account'))->with('status', 'Viaje creado con éxito');
     }
-
+}
     public function show(){
         $authedUser = Auth::user();
-
-        $user = User::whereId($authedUser->id)->first();
+        
+        $travels = Travel::where('user_id', $authedUser->id)->get();
     
-        $travels = $user->Travel()->get("name", "location");
 
         return view('traveliens.travel-display', compact('travels'));
     }
@@ -78,4 +81,36 @@ class TravelpageController extends Controller
 
         return redirect(route('account'))->with('status', 'success');
     }
+
+    public function joinTravel(Request $request){
+        if (Auth::check()){
+
+    $user_id = Auth::id();
+    $travel_id = $request->input('travel_id');
+         // Obtiene el ID del usuario y el ID del viaje de la solicitud POST
+    $user_id = $request->input('user_id');
+    $travel_id = $request->input('travel_id');
+
+    // Asigna el viaje al usuario
+    $user = User::find($user_id);
+    $user->travel()->attach($travel_id);
+
+    return redirect(route('account'))->with('status', 'Apuntado al viaje con éxito');
+        }
+    }
+
+    public function joinedtravels(){
+        return view('traveliens.joinedtravels');
+    }
+
+    public function displaytravels(Request $request){
+        
+        $travels = Travel::all();
+        return view('traveliens.mainpage', compact('travels'));
+    }
 }
+
+
+
+
+    

@@ -7,7 +7,7 @@
 
 	
 
-    <form action="{{route('register')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('register_org')}}" method="POST" enctype="multipart/form-data">
 		@csrf
 
 		<label class="flex flex-col">

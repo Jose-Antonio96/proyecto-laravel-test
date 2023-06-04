@@ -12,6 +12,8 @@ use App\Http\Controllers\BackendController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\auth\RegistereduserController;
 use App\Http\Controllers\auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\auth\RegisteredUserOrgController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +61,8 @@ Route::get("/{seccion}", function ($seccion) {
 });
 */
 
+Route::resource('users', UserController::class)->names('admin.users');
+
 Route::view('/account_choose', 'traveliens.account_choose' )->name('account_choose');
 
 Route::view('/login', 'auth.login')->name('login');
@@ -73,15 +77,21 @@ Route::view('/register_org', 'auth.register_org')->name('register_org');
 
 Route::post('/register', [RegistereduserController::class, 'store']);
 
+Route::post('/register_org', [RegisteredUserOrgController::class, 'store']);
+
 Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 
-Route::get('/travelpage', [TravelpageController::class, 'travel'])->name('travel');
+Route::get('/travelpage/{id}', [TravelpageController::class, 'travel'])->name('travel');
 
 Route::post('/travelpage/create', [TravelpageController::class, 'createTravel'])->name('createTravelForm');
+
+Route::post('/travelpage/join', [TravelpageController::class, 'joinTravel'])->name('JoinTravelForm');
 
 Route::view("/travelpage/create", "traveliens.createtravel")->name('createTravel');
 
 Route::get('/travelpage/show', [TravelpageController::class, 'show'])->name('travel.show');
+
+Route::get('travelpage/joinedtravels', [TravelpageController::class, 'joinedtravels'])->name('JoinedTravels');
 
 Route::get("/home", HomeController::class)->name('home');
 //Route::get("/home", "App\Http\Controllers\HomeController")->name('home'); No es una buena prática

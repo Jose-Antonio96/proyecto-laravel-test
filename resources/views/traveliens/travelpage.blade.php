@@ -26,8 +26,19 @@
 				
 
 			<div class="flex justify-center row-start-3 row-end-3 col-start-2">
-			<a class="w-72 btn btn-lg border-4 border-[#181818] bg-[#f87721] hover:bg-[#1b9df0] text-[#181818] text-center font-bold py-3 px-10 rounded-full m-10" href="#">Apuntarse</a>
-				</div>
+				<form class="w-72 btn btn-lg border-4 border-[#181818] bg-[#f87721] hover:bg-[#1b9df0] text-[#181818] text-center font-bold py-3 px-10 rounded-full m-10"
+				action="{{route('JoinTravelForm')}}" method="POST" enctype="multipart/form-data">
+				@csrf
+				<input type="hidden" name="travel_id" value="{{ $travel->id }}">
+				<input type="hidden" name="user_id" value="{{ $travel->user_id }}">
+					<button type="submit">Apuntarse</button>
+					<br>	
+				</form>
+					</div>
+			</div>
+			
+				   
+				
 		</div>
 		
 		

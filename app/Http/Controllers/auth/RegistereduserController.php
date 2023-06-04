@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Http\Requests\SaveUserRequest;
+use App\Models\Role;
+use Illuminate\Auth\Events\Registered;
 
 class RegisteredUserController extends Controller
 {
@@ -26,6 +28,8 @@ class RegisteredUserController extends Controller
     $account -> email = $request->email;
     $account -> password = $request->password;
     $account -> image = $imageName;
+    $role = Role::where('name', 'user')->first();
+    $account->role_id = $role->id;
     $account -> save();
 
         /*

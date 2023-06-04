@@ -30,8 +30,6 @@ return new class extends Migration
             $table->timestamp('starts')->nullable();
             $table->timestamp('finishes')->nullable();
             
-            $table->boolean('professional');
-            $table->string('price', 12)->nullable();
             $table->rememberToken()->nullable();
             $table->timestamps();
 
