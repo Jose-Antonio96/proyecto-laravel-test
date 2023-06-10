@@ -2,44 +2,34 @@
 		title="Página de viaje" 
 		meta-description="Página viaje meta description"
 		>
-		
-		<div class="grid grid-cols-3 m-6 card lg:card-side bg-gradient-to-r from-[#8ef8ff] to-[#1b9df0] border-4 border-[#181818] shadow-xl p-4">
-			<div class="m-4 p-4 uppercase text-4xl font-bold text-[#d53046] ">{{$travel->name}}</div>
-
-			<div class="m-4 uppercase text-2xl font-bold text-white">{{$travel->location}}</div>
-
-			<div class="rounded bg-gradient-to-r from-[#d53046] to-[#f87721] text-white align-middle p-2 font-semibold outline-double">{{$travel->description}}</div>
-
-			<div class="m-4 text-[#d53046] text-2xl">{{$travel->organizer}}</div>
-
-			<div class="m-4">@if($travel->professional)
-					<p class="font-extrabold">Viaje certificado</p>
-				@endif
-			</div>
-
-			<div class="m-8 font-medium text-2xl text-white italic flex justify-center rounded row-span-2 ">
-
-				<div class="m-8 text-center text-[#181818]">Desde: <br>{{$travel->starts}}</div>
-			
-				<div class="m-8 text-center text-[#181818]">Hasta: <br>{{$travel->finishes}}</div>
-			</div>
 				
 
-			<div class="flex justify-center row-start-3 row-end-3 col-start-2">
-				<form class="w-72 btn btn-lg border-4 border-[#181818] bg-[#f87721] hover:bg-[#1b9df0] text-[#181818] text-center font-bold py-3 px-10 rounded-full m-10"
-				action="{{route('JoinTravelForm')}}" method="POST" enctype="multipart/form-data">
-				@csrf
-				<input type="hidden" name="travel_id" value="{{ $travel->id }}">
-				<input type="hidden" name="user_id" value="{{ $travel->user_id }}">
-					<button type="submit">Apuntarse</button>
-					<br>	
-				</form>
-					</div>
+<div class="flex-wrap ml-10 mr-10 p-10 mt-2 mb-5">
+<div class="card bg-[#d53046] shadow-xl">
+  <figure><img class="h-96 object-cover w-full" src="{{ asset('images/' . $travel->image) }}" alt="Album"/></figure>
+  <div class="card-body grid grid-cols-2 bg-[#d53046]">
+    <h2 class="card-title text-white flex justify-center">{{$travel->name}}</h2>
+    <p  class="text-white flex justify-center">{{$user->name}}</p>
+    <p class="text-white flex justify-center">{{$travel->location}}</p>
+    <p class="text-white flex justify-center">{{$travel->description}}</p>
+    <p class="text-white flex justify-center mt-2">{{$travel->starts}}</p>
+				<p class="text-white flex justify-center mt-2">{{$travel->finishes}}</p>
+    
+  </div>
+  <div class="card-actions justify-center m-6 ">
+	<form class="btn btn-primary text-xl bg-[#181818] hover:bg-[#f87721] w-48"
+	action="{{route('JoinTravelForm')}}" method="POST" enctype="multipart/form-data">
+	@csrf
+	<input type="hidden" name="travel_id" value="{{ $travel->id }}">
+	<input type="hidden" name="user_id" value="{{ $travel->user_id }}">
+		<button type="submit">Apuntarse</button>
+				<br>	
+				</form>	
+				</div>
 			</div>
+		<div>
+	</div>
+</div>
 			
-				   
-				
-		</div>
-		
 		
 </x-layouts.app>

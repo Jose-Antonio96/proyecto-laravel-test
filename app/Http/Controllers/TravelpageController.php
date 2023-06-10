@@ -9,26 +9,28 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Log;
 use App\Models\Tag;
+use Illuminate\Support\Facades\DB;
+
 
 
 class TravelpageController extends Controller
 {
     public function travel($id){
-
-
+        $user = DB::table('travels')
+                ->leftJoin('users', 'travels.user_id', '=', 'users.id')
+                ->select('users.name')
+                ->where('travels.id', '=', $id)
+                ->first();
+      
         $travel = Travel::find($id);
-            return view('traveliens.travelpage', compact('travel'));
-        }
-
-    public function createTravel(Request $request){
-
-        if (!Auth::check())
-            return redirect(route("login"));
-    
-
-    if (Auth::check()) {
-        $user_id = Auth::id();
-            /* Esto es para testeo
+      
+        return view('traveliens.travelpage', [
+          'travel' => $travel,
+          'user' => $user
+        ]);
+      }
+      
+/* Esto es para testeo
         Log::info("hello");
         Log::info($request);
         
@@ -47,17 +49,30 @@ class TravelpageController extends Controller
         Log::info("world");
         Log::info($data);
         */
+    public function createTravel(Request $request){
+
+        if (!Auth::check())
+            return redirect(route("login"));
+    
+
+    if (Auth::check()) {
+        $user_id = Auth::id();
+            
         
 
         $travel = new Travel();
         $travel -> name = $request->name;
         $travel -> location = $request->location;
         $travel -> description = $request->description;
+        $imageName = time().'.'.$request->image->extension();
+
+      // Public Folder
+        $request->image->move(public_path('images/'), $imageName);
+        $travel -> image = $imageName;
         $travel->user_id = $user_id;
-        /*
         $travel -> starts = $request->starts;
         $travel -> finishes = $request->finishes;
-        */
+        
 
         $travel-> save();
 
@@ -88,8 +103,7 @@ class TravelpageController extends Controller
     $user_id = Auth::id();
     $travel_id = $request->input('travel_id');
          // Obtiene el ID del usuario y el ID del viaje de la solicitud POST
-    $user_id = $request->input('user_id');
-    $travel_id = $request->input('travel_id');
+
 
     // Asigna el viaje al usuario
     $user = User::find($user_id);

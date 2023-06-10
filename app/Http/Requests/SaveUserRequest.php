@@ -27,7 +27,7 @@ class SaveUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255', 'unique:users'],
             'email' => ['required', 'email', 'max:255', 'unique:users'],
             'image' => ['required', 'mimes:png,jpg,jpeg|max:2048'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],

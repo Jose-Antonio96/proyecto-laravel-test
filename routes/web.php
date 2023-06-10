@@ -81,8 +81,6 @@ Route::post('/register_org', [RegisteredUserOrgController::class, 'store']);
 
 Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 
-Route::get('/travelpage/{id}', [TravelpageController::class, 'travel'])->name('travel');
-
 Route::post('/travelpage/create', [TravelpageController::class, 'createTravel'])->name('createTravelForm');
 
 Route::post('/travelpage/join', [TravelpageController::class, 'joinTravel'])->name('JoinTravelForm');
@@ -92,6 +90,8 @@ Route::view("/travelpage/create", "traveliens.createtravel")->name('createTravel
 Route::get('/travelpage/show', [TravelpageController::class, 'show'])->name('travel.show');
 
 Route::get('travelpage/joinedtravels', [TravelpageController::class, 'joinedtravels'])->name('JoinedTravels');
+
+Route::get('/travelpage/{id}', [TravelpageController::class, 'travel'])->name('travel');
 
 Route::get("/home", HomeController::class)->name('home');
 //Route::get("/home", "App\Http\Controllers\HomeController")->name('home'); No es una buena prática

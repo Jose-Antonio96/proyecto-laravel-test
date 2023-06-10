@@ -14,6 +14,9 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
+        backgroundImage: {
+            images: ["url('.images/beach.png')"],
+        },
     },
 
     plugins: [

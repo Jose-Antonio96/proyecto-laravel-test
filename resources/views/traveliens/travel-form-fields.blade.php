@@ -24,6 +24,31 @@
     <small>*{{$message}}</small>
     @enderror
     </label><br>
+
+    <label>
+        Fecha de comienzo <br>
+    <input name="starts" type="date" value="{{old('starts')}}" required>
+    @error('starts')
+    <br>
+    <small>*{{$message}}</small>
+    @enderror
+    </label><br>
+
+    <label>
+     Fecha de finalización <br>
+    <input name="finishes" type="date" value="{{old('finishes')}}" required>
+     @error('finishes')
+     <br>
+    <small>*{{$message}}</small>
+    @enderror
+    </label><br>
+
+    <div class="col-span-full">
+        <label><br>
+            Imagen representando al viaje
+            <input type="file" name="image" class="form-control file-input file-input-bordered w-full max-w-xs" required>
+        </label>
+    </div>
 {{--
     <div class="container">
         <div class="row">
