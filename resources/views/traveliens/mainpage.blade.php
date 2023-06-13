@@ -47,10 +47,11 @@ Esto iría dentro del $slot en layout.blade en components
 				<input type="hidden" name="travel" value="{{$travel->id}}">
 				
 				<img
-			alt="Anthrax_Stage"
-			src="images/Anthrax_image.jpg"
-			class="relative inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+				alt="Imagen de viaje"
+				src="{{ asset('images/' . $travel->image) }}"
+				class="relative inset-0 w-full h-96 object-cover opacity-75 transition-opacity group-hover:opacity-50"
 			/>
+			
 		
 			<div class="absolute inset-0 p-4 sm:p-6 lg:p-8">
 			<p class="font-bold uppercase tracking-widest text-white">
