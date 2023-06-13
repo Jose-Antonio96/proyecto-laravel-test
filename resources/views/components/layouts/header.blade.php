@@ -17,12 +17,15 @@
             </button>
           </a>
         
+        @auth 
 
         <a href="{{route ('backend.index') }}">
           <button class="bg-[#1b9df0] hover:bg-[#f87721] -translate-y-2 text-white font-bold py-3 px-10 rounded-full m-3">
           Backend
           </button>
         </a>
+
+        @endauth
       
       @guest
       <a href="{{route ('account_choose') }}">

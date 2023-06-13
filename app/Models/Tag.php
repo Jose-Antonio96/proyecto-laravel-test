@@ -11,13 +11,22 @@ class Tag extends Model
 {
     use HasFactory;
     
-    public function Travel(){
-        return $this->belongsToMany(Travel::class);
-    }
+    protected $fillable = [
+        'tags'
+    ];
 
     public function User(){
         return $this->belongsToMany(User::class);
     }
     
+    
 
+    
+
+    public function travels()
+    {
+        return $this->belongsToMany(Travel::class);
+    }
+
+    
 }

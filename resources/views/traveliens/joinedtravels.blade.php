@@ -3,7 +3,9 @@
 		meta-description="Página backend meta description"
 		>
 		
-	Esta es la página de backend de Traveliens<br>
+		@foreach ($travels as $travel)
+    <p>{{ $travel->name }}</p>
+@endforeach
 
-		<a href="{{route('backend.show')}}">Editar tags</a>
+
 </x-layouts.app>

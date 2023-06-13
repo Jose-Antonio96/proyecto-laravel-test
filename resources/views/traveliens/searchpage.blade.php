@@ -43,7 +43,7 @@
 			<form action="{{route('travel', $trav->id)}}" method="GET">
 				<div class="w-100% mr-8">
 					<input type="hidden" name="travel" value="{{$trav->id}}">
-<table class="table bg-[#183160] m-4">
+<table class="-translate-y-20 table bg-[#183160] m-4">
 <!-- head -->
 <thead>
 <tr>
@@ -70,7 +70,7 @@
   <br/>
 
 </td>
-<td class="text-white">{{$trav->ends}}</td>
+<td class="text-white">{{$trav->finishes}}</td>
 <th class>
   <img class="object-fill h-48 w-96 ml-10" src="{{ asset('images/' . $trav->image) }}">
 </th>

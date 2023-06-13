@@ -49,37 +49,38 @@ class TravelpageController extends Controller
         Log::info("world");
         Log::info($data);
         */
-    public function createTravel(Request $request){
+        public function createTravel(Request $request)
+{
+    $tags = $request->input('tags');
 
-        if (!Auth::check())
-            return redirect(route("login"));
-    
-
-    if (Auth::check()) {
-        $user_id = Auth::id();
-            
-        
-
-        $travel = new Travel();
-        $travel -> name = $request->name;
-        $travel -> location = $request->location;
-        $travel -> description = $request->description;
-        $imageName = time().'.'.$request->image->extension();
-
-      // Public Folder
-        $request->image->move(public_path('images/'), $imageName);
-        $travel -> image = $imageName;
-        $travel->user_id = $user_id;
-        $travel -> starts = $request->starts;
-        $travel -> finishes = $request->finishes;
-        
-
-        $travel-> save();
-
-
-        return redirect(route('account'))->with('status', 'Viaje creado con éxito');
+    if (!Auth::check()) {
+        return redirect(route("login"));
     }
+
+    $user_id = Auth::id();
+
+    $travel = new Travel();
+    $travel->name = $request->name;
+    $travel->location = $request->location;
+    $travel->description = $request->description;
+    $imageName = time().'.'.$request->image->extension();
+
+    // Mover la imagen a la carpeta 'images' en la carpeta 'public'
+    $request->image->move(public_path('images/'), $imageName);
+    $travel->image = $imageName;
+    $travel->user_id = $user_id;
+    $travel->starts = $request->starts;
+    $travel->finishes = $request->finishes;
+
+    $travel->save();
+
+    // Asociar las etiquetas seleccionadas con el viaje
+    $travel->tags()->sync($tags);
+
+    return redirect(route('account'))->with('status', 'Viaje creado con éxito');
 }
+
+        
     public function show(){
         $authedUser = Auth::user();
         
@@ -109,13 +110,22 @@ class TravelpageController extends Controller
     $user = User::find($user_id);
     $user->travel()->attach($travel_id);
 
+
     return redirect(route('account'))->with('status', 'Apuntado al viaje con éxito');
         }
     }
 
     public function joinedtravels(){
-        return view('traveliens.joinedtravels');
-    }
+
+    // Get the authenticated user's ID
+    $user_id = Auth::id();
+
+    // Get the travels that the user has joined
+    $travels = User::find($user_id)->travel;
+
+    // Return a view showing the list of joined travels
+    return view('traveliens.joinedtravels', ['travels' => $travels]);
+}
 
     public function displaytravels(Request $request){
         

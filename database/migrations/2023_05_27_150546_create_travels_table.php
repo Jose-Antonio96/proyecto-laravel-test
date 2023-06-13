@@ -17,10 +17,7 @@ return new class extends Migration
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignIdFor(User::class)->nullable();
-
-            $table->unsignedBigInteger('tag_id')->nullable();
-            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('set null');
+            $table->foreignIdFor(User::class)->nullable();;
 
             $table->string('name',100);
             $table->string('location', 40 ); 

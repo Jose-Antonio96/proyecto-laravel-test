@@ -14,21 +14,28 @@ class AccountController extends Controller
     }
 
     public function update(User $user){
+
         return view('traveliens.update', ['user' => $user]);
 
     
     }
 
-    public function edit(SaveUserRequest $request, User $user){
+    public function edit(Request $request, User $user){
+/*
+        $request->validate([
+            'name' => ['required', 'min:4'],
+            'email' => ['required'],
+            'password' => ['required', 'min:8'],
+        ]);
+        
 
-        $user->update($request->validated());
-        //$account = User::find($user); No necesitamos esta línea teniendo el User $user
-        /*
+        $user->update($request->validate());
+        */
         $user -> name = $request->input('name');
         $user -> email = $request->input('email');
         $user -> password = $request->input('password');
         $user -> save();
-            */
+            
 
             /*
        $user->update([

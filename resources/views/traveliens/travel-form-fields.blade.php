@@ -1,47 +1,52 @@
-<label>
-    Nombre <br>
-    <input name="name" type="text" value="{{old('name')}}" required>
-    @error('name')
-    <br>
-    <small>*{{$message}}</small>
-    @enderror
-    </label><br>
-    
-    <label>
-    Localización <br>
-    <input name="location" type="text" value="{{old('location')}}" required>
-    @error('location')
-    <br>
-    <small>*{{$message}}</small>
-    @enderror
-    </label><br>
+    <div class="mb-4">
+        <label class="block mb-1">Título</label>
+        <input class="py-2 px-3 border border-gray-300 focus:border-[#181818] focus:outline-none focus:ring focus:ring-[#f87721] focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" name="name" type="text" value="{{old('name')}}" required>
+        @error('name')
+        <br>
+        <small>*{{$message}}</small>
+        @enderror
+        
+    </div>
 
-    <label>
-    Descripción <br>
-    <input name="description" type="textarea" value="{{old('description')}}" required>
-    @error('description')
-    <br>
-    <small>*{{$message}}</small>
-    @enderror
-    </label><br>
+    <div class="mb-4">
+        <label class="block mb-1">Localización</label>
+        <input class="py-2 px-3 border border-gray-300 focus:border-[#181818] focus:outline-none focus:ring focus:ring-[#f87721] focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" name="location" type="text" value="{{old('location')}}" required>
+        @error('name')
+        <br>
+        <small>*{{$message}}</small>
+        @enderror
+        
+    </div>
 
-    <label>
-        Fecha de comienzo <br>
-    <input name="starts" type="date" value="{{old('starts')}}" required>
-    @error('starts')
-    <br>
-    <small>*{{$message}}</small>
-    @enderror
-    </label><br>
+    <div class="mb-4">
+        <label class="block mb-1">Descripción</label>
+        <input class="py-2 px-3 border border-gray-300 focus:border-[#181818] focus:outline-none focus:ring focus:ring-[#f87721] focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" name="description" type="textarea" value="{{old('description')}}" required>
+        @error('name')
+        <br>
+        <small>*{{$message}}</small>
+        @enderror
+        
+    </div>
 
-    <label>
-     Fecha de finalización <br>
-    <input name="finishes" type="date" value="{{old('finishes')}}" required>
-     @error('finishes')
-     <br>
-    <small>*{{$message}}</small>
-    @enderror
-    </label><br>
+    <div class="mb-4">
+        <label class="block mb-1">Fecha de comienzo</label>
+        <input class="py-2 px-3 border border-gray-300 focus:border-[#181818] focus:outline-none focus:ring focus:ring-[#f87721] focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" name="starts" type="date" value="{{old('starts')}}" required>
+        @error('name')
+        <br>
+        <small>*{{$message}}</small>
+        @enderror
+        
+    </div>
+
+    <div class="mb-4">
+        <label class="block mb-1">Fecha de finalización</label>
+        <input class="py-2 px-3 border border-gray-300 focus:border-[#181818] focus:outline-none focus:ring focus:ring-[#f87721] focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" name="finishes" type="date" value="{{old('finishes')}}" required>
+        @error('name')
+        <br>
+        <small>*{{$message}}</small>
+        @enderror
+        
+    </div>
 
     <div class="col-span-full">
         <label><br>
@@ -49,31 +54,26 @@
             <input type="file" name="image" class="form-control file-input file-input-bordered w-full max-w-xs" required>
         </label>
     </div>
-{{--
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <span>Seleccione tags que añadir</span>
 
-                    <br>
-                    <div class="form-check">
-                        <label class="form-check-label" for="check">
-                            
-                            @foreach ($tags as $tag)
-                            <input type="checkbox" class="form-check-input" name="tags"
-                                value="{{ in_array($tag, $array) ? 'checked' : '' }}  >
-                        @endforeach
+    
+    </div>
 
-                        </label>
-                </div>
-            </div>
-        </div>
-    </div><br>
+            <div class="mt-6">
+                <label class="block mb-1">Eliga etiquetas</label>
+                <div class="mb-4 grid grid-cols-4">
+                    
+                    @foreach($tags as $id => $tagName)
+    <ol>
+        <input type="checkbox" class="checkbox m-4" id="{{ $id }}" name="tags[]" value="{{ $id }}">
+        <label for="{{ $id }}">{{ $tagName }}</label>
+    </ol>
+@endforeach
 
-    <label>
+                
+                  </div>
+              
+
+      
+          
 
 
-    <small>*{{$message}}</small>
-    @enderror
-    </label><br>
-    --}}

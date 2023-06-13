@@ -14,6 +14,7 @@ use App\Http\Controllers\auth\RegistereduserController;
 use App\Http\Controllers\auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\auth\RegisteredUserOrgController;
+use App\Models\Tag;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,15 +82,15 @@ Route::post('/register_org', [RegisteredUserOrgController::class, 'store']);
 
 Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 
-Route::post('/travelpage/create', [TravelpageController::class, 'createTravel'])->name('createTravelForm');
+Route::get('travelpage/joinedtravels', [TravelpageController::class, 'joinedtravels'])->name('JoinedTravels')->middleware('auth');
 
-Route::post('/travelpage/join', [TravelpageController::class, 'joinTravel'])->name('JoinTravelForm');
+Route::post('/travelpage/create', [TravelpageController::class, 'createTravel'])->name('createTravelForm')->middleware('auth');
 
-Route::view("/travelpage/create", "traveliens.createtravel")->name('createTravel');
+Route::post('/travelpage/join', [TravelpageController::class, 'joinTravel'])->name('JoinTravelForm')->middleware('auth');
 
-Route::get('/travelpage/show', [TravelpageController::class, 'show'])->name('travel.show');
+Route::view("/travelpage/create", "traveliens.createtravel", ['tags' => Tag::pluck('tags', 'id')])->name('createTravel')->middleware('auth');
 
-Route::get('travelpage/joinedtravels', [TravelpageController::class, 'joinedtravels'])->name('JoinedTravels');
+Route::get('/travelpage/show', [TravelpageController::class, 'show'])->name('travel.show')->middleware('auth');
 
 Route::get('/travelpage/{id}', [TravelpageController::class, 'travel'])->name('travel');
 
@@ -102,15 +103,15 @@ Route::get("/searchpage/result", [SearchPageController::class, 'result'])->name(
 
 Route::get("/help", HelpController::class)->name('help');
 
-Route::get("/account", [AccountController::class, 'show'])->name('account');
+Route::get("/account", [AccountController::class, 'show'])->name('account')->middleware('auth');
 
 Route::get("/accountuser}", [DBController::class, 'show'])->name('dbuser');
 
-Route::get("/account/{user}/update", [AccountController::class, 'update'])->name('account.update');
+Route::get("/account/{user}/update", [AccountController::class, 'update'])->name('account.update')->middleware('auth');
 
-Route::patch("/account/{user}", [AccountController::class, 'edit' ])->name('account.edit');
+Route::patch("/account/{user}", [AccountController::class, 'edit' ])->name('account.edit')->middleware('auth');
 
-Route::delete("/account/{user}", [AccountController::class, 'delete'])->name('account.delete');
+Route::delete("/account/{user}", [AccountController::class, 'delete'])->name('account.delete')->middleware('auth');
 /*
 Route::get("/CreateAccount", [FormController::class, 'create'])->name('form');
 
@@ -119,9 +120,15 @@ Route::post("/CreateAccount" , [FormController::class, 'save'])->name('form.save
 Route::get("/searchuser/{name}", [DBuserresult::class, 'show'])->name('dbuser');
 */
 
-Route::get("/backend", [BackendController::class, 'index'])->name('backend.index');
+Route::get("/backend", [BackendController::class, 'index'])->name('backend.index')->middleware('auth');
 
-Route::get("/backend/tags", [BackendController::class, 'show'])->name('backend.show');
+Route::get('/backend/{tag}/show', [BackendController::class, 'show'])->name('backend.show')->middleware('auth');
+
+Route::post('/backend/create',[BackendController::class, 'create'])->name('backend.create')->middleware('auth');
+
+Route::patch("/backend/{tag}", [BackendController::class, 'edit' ])->name('backend.edit')->middleware('auth');
+
+Route::delete("/backend/{tag}", [BackendController::class, 'delete'])->name('backend.delete')->middleware('auth');
 
 Route::get('{noexiste?}', function ($noexiste) {
     if($noexiste)
