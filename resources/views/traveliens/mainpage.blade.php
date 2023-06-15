@@ -29,26 +29,26 @@ Esto iría dentro del $slot en layout.blade en components
 	
 {{-- <div class="bg-cover bg-center mt-10" style="background-image: url('./images/traveliens3.png')"> --}}
 
-	<div class="grid grid-cols-3 bg-white rounded-xl m-4">
+	<div class="grid grid-cols-3 bg-white rounded-xl mb-0">
 		<img class="bg-white rounded-xl m-4" src="images/logo.png"/>
 	<div class="grid grid-rows-2">
-		<h1 class="bg-white rounded-xl m-4 translate-y-40 flex justify-center font-black text-9xl text-[#d53046]">Bienvenido!</h1>
+		<h1 class="bg-white rounded-xl m-4 translate-y-40 flex justify-center font-black text-9xl text-[#d53046] font-caveat">Traveliens</h1>
 		<h2 class="text-2xl font-bold ml-5 text-[#f87721] translate-y-20">Todo tipo de viajes a un solo click</h2>
 		</div>
 	</div>
 			
 			
-	<div class="m-2 flex justify-items-center md grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
+	<div class="m-2 flex justify-items-center md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-20 m-5">
 				
 			@foreach ($travels as $travel)
 
-			<a href="{{ route('travel', $travel->id) }}" class="group relative block bg-black m-3">
+			<a href="{{ route('travel', $travel->id) }}" class="group relative block bg-black m-6">
 			
 				<input type="hidden" name="travel" value="{{$travel->id}}">
 				
 				<img
 				alt="Imagen de viaje"
-				src="{{ asset('images/' . $travel->image) }}"
+				src="{{ asset('./images/' . $travel->image) }}"
 				class="relative inset-0 w-full h-96 object-cover opacity-75 transition-opacity group-hover:opacity-50"
 			/>
 			
@@ -76,8 +76,7 @@ Esto iría dentro del $slot en layout.blade en components
 		
 		@endforeach
 
-		
-		
 		</div>
-</div>  
+	</div> 
+
 </x-layouts.app>

@@ -115,17 +115,26 @@ class TravelpageController extends Controller
         }
     }
 
-    public function userTravels(){
 
     // Get the authenticated user's ID
-    $user_id = Auth::id();
+    public function userTravels(){
 
-    // Get the travels that the user has joined
-    $travels = User::find($user_id)->travel;
-
-    // Return a view showing the list of joined travels
-    return view('traveliens.usertravels', ['travels' => $travels]);
-}
+        // Get the authenticated user's ID
+        $user_id = Auth::id();
+    
+        // Get the travels that the user has joined
+        $joined_travels = User::find($user_id)->travel;
+    
+        // Get the travels that the user has created
+        $created_travels = Travel::where('user_id', $user_id)->get();
+    
+        // Return both sets of travels to the view
+        return view('traveliens.usertravels', [
+            'joined_travels' => $joined_travels,
+            'created_travels' => $created_travels
+        ]);
+    }
+    
 
     public function displaytravels(Request $request){
         

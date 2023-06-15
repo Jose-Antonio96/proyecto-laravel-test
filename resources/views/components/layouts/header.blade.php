@@ -1,7 +1,7 @@
 
 
 
-  <div class="navbar bg-base-100 items-center h-24 m-4 mb-3 py-1 flex justify-center -translate-y-2">
+<nav class="bg-base-100 items-center h-24 m-4 mb-3 py-1 flex justify-center -translate-y-2">
 
     <ul class="text-2xl hidden xl:block ">
        
@@ -58,8 +58,8 @@
             
         </form>
 
-        <div class="avatar m-2.5 translate-x-40">
-          <div class="w-24 rounded-xl translate-y-9 ml-16">
+        <div class="avatar ml-40 m-2.5">
+          <div class="w-24 rounded-xl translate-y-9">
       <a href="{{route("account")}}">
         <img src="{{ asset('images/' . Auth::user()->image) }}"/></a>
         </div>

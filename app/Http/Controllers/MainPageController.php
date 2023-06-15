@@ -14,7 +14,7 @@ class MainPageController extends Controller
 }
     public function displaytravels(Request $request){
         
-        $travels = Travel::inRandomOrder()->take(6)->get();
+        $travels = Travel::inRandomOrder()->take(9)->get();
         return $travels;
 }
 
