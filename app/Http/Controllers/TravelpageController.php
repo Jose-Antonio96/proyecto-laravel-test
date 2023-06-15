@@ -115,7 +115,7 @@ class TravelpageController extends Controller
         }
     }
 
-    public function joinedtravels(){
+    public function userTravels(){
 
     // Get the authenticated user's ID
     $user_id = Auth::id();
@@ -124,13 +124,17 @@ class TravelpageController extends Controller
     $travels = User::find($user_id)->travel;
 
     // Return a view showing the list of joined travels
-    return view('traveliens.joinedtravels', ['travels' => $travels]);
+    return view('traveliens.usertravels', ['travels' => $travels]);
 }
 
     public function displaytravels(Request $request){
         
         $travels = Travel::all();
         return view('traveliens.mainpage', compact('travels'));
+    }
+
+    public function editTravel(){
+
     }
 }
 

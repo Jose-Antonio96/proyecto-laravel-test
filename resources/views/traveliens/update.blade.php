@@ -1,6 +1,6 @@
 <x-layouts.app 
-		title="Editar" 
-		meta-description="Página edición meta description"
+		title="Actualizar cuenta" 
+		meta-description="Página actualización meta description"
 		>
 		<div class="w-full min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center mb-12 pt-6 sm:pt-0">
 			<h2 class="mb-12 text-center text-5xl font-extrabold text-[#d53046]">Editar</h2>

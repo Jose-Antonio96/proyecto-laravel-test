@@ -1,7 +1,7 @@
 
     <x-layouts.app 
-		title="Página de formulario" 
-		meta-description="Página formulario meta description"
+		title="Página de crear viaje" 
+		meta-description="Página crear viaje meta description"
 		>
 
 <div class="w-full min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0">

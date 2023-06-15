@@ -1,6 +1,6 @@
 <x-layouts.app 
-		title="Página de backend" 
-		meta-description="Página backend meta description"
+		title="Viajes del usuario {{ Auth::user()->name }}" 
+		meta-description="Viajes meta description"
 		>
 		
 		@foreach ($travels as $travel)

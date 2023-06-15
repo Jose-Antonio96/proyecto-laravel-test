@@ -1,6 +1,6 @@
 <x-layouts.app 
 		title="Eliga opcion" 
-		meta-description="Página edición meta description"
+		meta-description="Página elegir opción cuenta meta description"
 		>
 		
         <div class="flex justify-center">

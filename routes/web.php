@@ -82,7 +82,7 @@ Route::post('/register_org', [RegisteredUserOrgController::class, 'store']);
 
 Route::get("/", [MainPageController::class, 'inicio'])->name('mainpage');
 
-Route::get('travelpage/joinedtravels', [TravelpageController::class, 'joinedtravels'])->name('JoinedTravels')->middleware('auth');
+Route::get('travelpage/joinedtravels', [TravelpageController::class, 'userTravels'])->name('userTravels')->middleware('auth');
 
 Route::post('/travelpage/create', [TravelpageController::class, 'createTravel'])->name('createTravelForm')->middleware('auth');
 

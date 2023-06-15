@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules;
 
 
-class SaveUserRequest extends FormRequest
+class CreateTravelRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,12 +27,12 @@ class SaveUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string', 'max:255', 'unique:users'],
-            'name' => ['required', 'string', 'max:40'],
-            'email' => ['required', 'email', 'max:255', 'unique:users'],
-            'image' => ['required', 'mimes:png,jpg,jpeg|max:2048'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            
+            'name' => 'required|max:255',
+            'location' => 'required|max:40',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'starts' => 'required|date',
+            'finishes' => 'required|date|after:starts',
         ];
     }
 }

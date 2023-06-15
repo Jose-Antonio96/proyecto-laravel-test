@@ -5,7 +5,7 @@
 
 
 	<div class="h-screen flex items-center justify-center">
-		<form class="-translate-y-10 p-5 bg-slate-100 rounded border-4 border-[#f87721] space-y-12 max-w-lg shrink-0" action="{{route('register')}}" method="POST" enctype="multipart/form-data">
+		<form class="-translate-y-10 p-5 bg-slate-100 rounded border-4 border-[#f87721] space-y-12 max-w-lg shrink-0" accept="image/png,image/jpeg,image/pjg" action="{{route('register')}}" method="POST" enctype="multipart/form-data">
 			@csrf
 		
 			<div class="border-b border-[#181818] ml-15 mr-15">

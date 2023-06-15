@@ -13,7 +13,14 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+          fontFamily: {
+            sans: ['Nunito', 'sans-serif'],
+            caveat: ['Caveat Brush', 'cursive'],
+            mono: ['Roboto Mono', 'monospace'],
+            yusei: ['Yusei Magic', 'sans-serif'],
         },
+      },
+
         backgroundImage: {
             images: ["url('.images/beach.png')"],
         },
