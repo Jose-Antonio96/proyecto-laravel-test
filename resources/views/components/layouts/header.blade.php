@@ -97,12 +97,15 @@
   
 </a>
 
+@auth
 
 <a class="m-2 btn bg-[#1b9df0] w-24 hover:bg-[#f87721]" href="{{route ('backend.index') }}">
     <p class="text-white">
   Backend
     </p>
 </a>
+
+@endauth
 
 @guest
 <a class="m-2 btn bg-[#1b9df0] w-24 hover:bg-[#f87721]" href="{{route ('register') }}">
