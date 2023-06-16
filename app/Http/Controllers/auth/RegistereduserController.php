@@ -28,8 +28,10 @@ class RegisteredUserController extends Controller
     $account -> email = $request->email;
     $account -> password = $request->password;
     $account -> image = $imageName;
+    /*
     $role = Role::where('name', 'user')->first();
     $account->role_id = $role->id;
+    */
     $account -> save();
 
         /*
