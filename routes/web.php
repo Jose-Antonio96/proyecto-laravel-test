@@ -88,7 +88,7 @@ Route::post('/travelpage/create', [TravelpageController::class, 'createTravel'])
 
 Route::post('/travelpage/join', [TravelpageController::class, 'joinTravel'])->name('JoinTravelForm')->middleware('auth');
 
-Route::view("/travelpage/create", [TravelpageController::class, 'createTrav'])->name('createTravel')->middleware('auth');
+Route::get('/travelpage/create', [TravelpageController::class, 'createTrav'])->name('createTravel')->middleware('auth');
 
 Route::get('/travelpage/show', [TravelpageController::class, 'show'])->name('travel.show')->middleware('auth');
 
