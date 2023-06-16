@@ -59,20 +59,18 @@
     
     </div>
 
-            <div class="mt-6">
-                <label class="block mb-1">Eliga etiquetas</label>
-                <div class="mb-4 grid grid-cols-4">
-                    
-                    @foreach($tags as $id => $tagName)
-    <ol>
-        <input type="checkbox" class="checkbox m-4" id="{{ $id }}" name="tags[]" value="{{ $id }}">
-        <label for="{{ $id }}">{{ $tagName }}</label>
-    </ol>
+    <div class="mt-6">
+        <label class="block mb-1">Elige etiquetas</label>
+        <div class="mb-4 grid grid-cols-4">
+            @foreach($tags as $id => $tagName)
+                <ol>
+                    <input type="checkbox" class="checkbox m-4" id="{{ $id }}" name="tags[]" value="{{ $id }}">
+                    <label for="{{ $id }}">{{ $tagName }}</label>
+                </ol>
             @endforeach
-
-                
-                  </div>
-                </div>             
+        </div>
+    </div>
+             
 
       
           
