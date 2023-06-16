@@ -26,7 +26,7 @@
                   Etiquetas
                   <div class="grid grid-cols-7"><br>
                   @foreach($tags as $tag)
-                      <ol>
+                      <ol class="font-mono">
                           <input type="checkbox" id="tag{{ $tag->id }}" name="tags[]" value="{{ $tag->id }}">
                           <label for="tag{{ $tag->id }}">{{ $tag->tags }}</label>
                           <div class="content">
