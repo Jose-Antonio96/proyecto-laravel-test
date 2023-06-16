@@ -64,7 +64,7 @@ Route::get("/{seccion}", function ($seccion) {
 
 Route::resource('users', UserController::class)->names('admin.users');
 
-Route::view('/account_choose', 'traveliens.account_choose' )->name('account_choose');
+/*Route::view('/account_choose', 'traveliens.account_choose' )->name('account_choose');*/
 
 Route::view('/login', 'auth.login')->name('login');
 

@@ -12,7 +12,7 @@
             @csrf
             @include('traveliens.travel-form-fields')
             <div class="mt-6">
-                <button class="w-full inline-flex items-center justify-center px-4 py-2 bg-[#f87721] border border-transparent rounded-md font-semibold text-white hover:bg-[#d53046] active:bg-[#d53046] focus:outline-none focus:border-[#d53046] focus:ring focus:ring-[#f87721] disabled:opacity-25 transition uppercase">Crear</button>
+                <button class="font-yusei w-full inline-flex items-center justify-center px-4 py-2 bg-[#f87721] border border-transparent rounded-md font-semibold text-white hover:bg-[#d53046] active:bg-[#d53046] focus:outline-none focus:border-[#d53046] focus:ring focus:ring-[#f87721] disabled:opacity-25 transition uppercase">Crear</button>
               </div>
             
             

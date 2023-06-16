@@ -1,3 +1,4 @@
+<div class="font-mono font-semibold">
     <div class="mb-4">
         <label class="block mb-1">Título</label>
         <input class="py-2 px-3 border border-gray-300 focus:border-[#181818] focus:outline-none focus:ring focus:ring-[#f87721] focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" name="name" type="text" value="{{old('name')}}" required>
@@ -67,11 +68,11 @@
         <input type="checkbox" class="checkbox m-4" id="{{ $id }}" name="tags[]" value="{{ $id }}">
         <label for="{{ $id }}">{{ $tagName }}</label>
     </ol>
-@endforeach
+            @endforeach
 
                 
                   </div>
-              
+                </div>             
 
       
           

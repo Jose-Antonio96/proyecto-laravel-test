@@ -3,7 +3,7 @@
 		meta-description="Página ayuda meta description"
 		>
 		
-		<div class="text-center font-bold m-10 mb-20">
+		<div class="text-center font-bold m-10 mb-20 font-mono">
 		
 			<p class="text-left m-16 font-bold">
 				<p>Protección de datos y privacidad:</p>

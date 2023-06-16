@@ -46,25 +46,25 @@
 			</div>
 			
 			<div class="col-span-2 bg-[#d53046] rounded p-2 mr-4 translate-x-0 lg:-translate-x-24">
-				<p class="uppercase mt-2 text-center text-white m-1 "> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quas nesciunt excepturi consequuntur pariatur obcaecati ipsam, veritatis aliquid. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quas nesciunt excepturi consequuntur pariatur obcaecati ipsam, veritatis aliquid.</p>
+				<p class="font-mono uppercase mt-2 text-center text-white m-1 "> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quas nesciunt excepturi consequuntur pariatur obcaecati ipsam, veritatis aliquid. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quas nesciunt excepturi consequuntur pariatur obcaecati ipsam, veritatis aliquid.</p>
 				</div>
 			</div>
 			
 			<div class="grid grid-cols-2 lg:grid-cols-4  m-6 mt-20 bg-[#181818] rounded">
 			
 			  <div class="m-2 p-2 flex justify-center">
-				<a class="min-w-full  btn btn-primary bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-2 px-4 rounded-full flex justify-center text-center sm:w-64 md:w-64 lg:w-72" href="{{route ('createTravelForm') }}">Crear viajes</a>
+				<a class="font-yusei min-w-full  btn btn-primary bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-2 px-4 rounded-full flex justify-center text-center sm:w-64 md:w-64 lg:w-72" href="{{route ('createTravelForm') }}">Crear viajes</a>
 				
 				</div>
 			
 			
 			  <div class="m-2 p-2 flex justify-center">
-				<a class="min-w-full  btn btn-primary bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-2 px-4 rounded-full flex justify-center text-center sm:w-64 md:w-64 lg:w-72" href="{{route ('account.update', $user)}}">Actualizar datos</a>
+				<a class="font-yusei min-w-full  btn btn-primary bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-2 px-4 rounded-full flex justify-center text-center sm:w-64 md:w-64 lg:w-72" href="{{route ('account.update', $user)}}">Actualizar datos</a>
 				
 				</div>
 			
 			  <div class="m-2 p-2 flex justify-center">
-				<a class="min-w-full  btn btn-primary bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-2 px-4 rounded-full flex justify-center text-center sm:w-64 md:w-64 lg:w-72" href="{{route ('userTravels') }}">Mis viajes</a>
+				<a class="font-yusei min-w-full  btn btn-primary bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-2 px-4 rounded-full flex justify-center text-center sm:w-64 md:w-64 lg:w-72" href="{{route ('userTravels') }}">Mis viajes</a>
 			   
 				</div>
 			
@@ -72,7 +72,7 @@
 				<form  action="{{route ('account.delete', $user) }}" method="POST">
 					@csrf 
 					@method('DELETE')
-					<button class="min-w-full btn btn-primary bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-2 px-4 rounded-full flex justify-center text-center sm:w-64 md:w-64 lg:w-72" type="submit">Eliminar cuenta</button>
+					<button class="font-yusei min-w-full btn btn-primary bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-2 px-4 rounded-full flex justify-center text-center sm:w-64 md:w-64 lg:w-72" type="submit">Eliminar cuenta</button>
 
 				</form><br>
 				</div>

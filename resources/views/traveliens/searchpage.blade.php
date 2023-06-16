@@ -29,7 +29,7 @@
 
 		@endif
     
-	<form class="" action="{{route('searchpage.result')}}" method="GET">
+	<form class="font-yusei" action="{{route('searchpage.result')}}" method="GET">
 		@include('traveliens.search-form-fields')
 			
 		</form><br>
@@ -43,7 +43,7 @@
 			<form action="{{route('travel', $trav->id)}}" method="GET">
 				<div class="w-100% mr-8">
 					<input type="hidden" name="travel" value="{{$trav->id}}">
-<table class="-translate-y-20 table bg-[#183160] m-4">
+<table class="font-mono -translate-y-20 table bg-[#183160] m-4">
 <!-- head -->
 <thead>
 <tr>
@@ -76,7 +76,7 @@
 </th>
 
 <th>
-	<input class="lg:w-64 w-32 translate-x-0 btn lg:-translate-x-4 md:translate-x-11" type="submit" value="Detalles">
+	<input class="font-yusei lg:w-64 w-32 translate-x-0 btn lg:-translate-x-4 md:translate-x-11" type="submit" value="Detalles">
 
 </th>
 </tr>

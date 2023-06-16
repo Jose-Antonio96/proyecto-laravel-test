@@ -15,5 +15,5 @@
 		</ul>
 		
 		
-        <h2 class="text-3xl font-bold dark:text-white"><a href="{{route ('account') }}">Regresar</a></h2>
+        <h2 class="font-yusei text-3xl font-bold dark:text-white"><a href="{{route ('account') }}">Regresar</a></h2>
 </x-layouts.app>

@@ -15,7 +15,7 @@
 				@enderror
 			</div>
 			<div class="flex items-center justify-center">
-				<button class="bg-[#f87721] hover:bg-[#181818] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+				<button class="font-yusei bg-[#f87721] hover:bg-[#181818] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
 				  Cambiar
 				</button>
 		  
@@ -27,7 +27,7 @@
 			<form action="{{ route('backend.delete', $tag) }}" method="POST">
 			  @csrf
 			  @method('DELETE')
-			  <button class="btn m-10 bg-[#181818] text-[#f87721]" type="submit">Eliminar etiqueta</button>
+			  <button class="font-yusei btn m-10 bg-[#181818] text-[#f87721]" type="submit">Eliminar etiqueta</button>
 			</form>
 		  </div>
 		  

@@ -4,7 +4,7 @@
 		>
 
 
-	<div class="h-screen flex items-center justify-center">
+	<div class="font-mono font-semibold h-screen flex items-center justify-center">
 		<form class="-translate-y-10 p-5 bg-slate-100 rounded border-4 border-[#f87721] space-y-12 max-w-lg shrink-0" accept="image/png,image/jpeg,image/pjg" action="{{route('register')}}" method="POST" enctype="multipart/form-data">
 			@csrf
 		
@@ -67,7 +67,7 @@
 			</div>
 		
 			<div class="mt-4 flex items-center justify-center gap-x-6">
-				<button type="submit" class="btn rounded-md bg-[#d53046] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d53046]">Completar registro</button>
+				<button type="submit" class="font-yusei btn rounded-md bg-[#d53046] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d53046]">Completar registro</button>
 			</div>
 		
 		</form>

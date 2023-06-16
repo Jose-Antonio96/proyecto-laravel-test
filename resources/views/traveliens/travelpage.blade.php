@@ -5,7 +5,7 @@
 				
 
 <div class="flex-wrap ml-10 mr-10 p-10 mt-2 mb-5">
-<div class="card bg-[#d53046] shadow-xl">
+<div class="card bg-[#d53046] shadow-xl font-mono">
   <figure><img class="h-96 object-cover w-full" src="{{ asset('images/' . $travel->image) }}" alt="Album"/></figure>
   <div class="card-body grid grid-cols-2 bg-[#d53046]">
     <h2 class="card-title text-white flex justify-center">{{$travel->name}}</h2>
@@ -22,7 +22,7 @@
 	@csrf
 	<input type="hidden" name="travel_id" value="{{ $travel->id }}">
 	<input type="hidden" name="user_id" value="{{ $travel->user_id }}">
-		<button type="submit">Apuntarse</button>
+		<button class="font-yusei" type="submit">Apuntarse</button>
 				<br>	
 				</form>	
 				</div>

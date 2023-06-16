@@ -9,7 +9,7 @@
 			</div>
 			@endif
 
-<div class="flex justify-center items-center mt-10 mb-80">
+<div class="font-yusei flex justify-center items-center mt-10 mb-80">
 	<div class="dropdown dropdown-hover m-8 mb-32">
 		<label tabindex="0" class="btn m-1 bg-[#181818] text-[#f87721]">Ver etiquetas</label>
 		<ul class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">

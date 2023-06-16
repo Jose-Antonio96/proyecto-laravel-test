@@ -1,10 +1,10 @@
-<footer class="bg-gray-900 text-white bottom-0 text-center h-56 fixed w-full">
+<footer class="bg-gray-900 text-white bottom-0 text-center h-56 w-full">
 
   <div class="flex justify-around items-center">
   
       <div class="relative grid-flow-col m-12">
           <p class="content-center">
-            <a href="#!" class="text-4xl">Privacidad</a>
+            <a href="#!" class="text-4xl">Traveliens©</a>
           </p>
           
         </div>
@@ -115,10 +115,7 @@
     </div>
   </div>
   </div>
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2023 Copyright:
-    <a class="text-whitehite" href="https://tailwind-elements.com/">Traveliens</a>
-  </div>
+  
 </div>
 
 </footer> 
