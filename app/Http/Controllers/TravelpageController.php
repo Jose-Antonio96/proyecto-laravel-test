@@ -142,9 +142,12 @@ class TravelpageController extends Controller
         return view('traveliens.mainpage', compact('travels'));
     }
 
-    public function editTravel(){
-
+    public function createTrav(){
+        $tags = Tag::pluck('tags', 'id');
+        return view('traveliens.createtravel', ['tags' => $tags]);
     }
+    
+    
 }
 
 
