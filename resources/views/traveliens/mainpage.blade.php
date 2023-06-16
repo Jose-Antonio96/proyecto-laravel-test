@@ -32,8 +32,8 @@ Esto iría dentro del $slot en layout.blade en components
 <div class="grid grid-cols-3 bg-white rounded-xl mb-0">
 		<img class="bg-white rounded-xl m-4" src="images/logo.png"/>
 	<div class="grid grid-rows-2">
-		<h1 class="bg-white rounded-xl m-4 translate-y-40 flex justify-center font-black text-[#d53046] font-caveat sm:text-4xl md:text-5xl text:8xl">Traveliens</h1>
-		<h2 class="font-mono text-xl font-bold ml-12 text-[#f87721] translate-y-20 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">Todo tipo de viajes a un solo click</h2>
+		<h1 class="bg-white rounded-xl m-4 lg:translate-y-20 flex justify-center font-black text-[#d53046] font-caveat md:text-9xl text-6xl md:translate-y-50 translate-y-30">Traveliens</h1>
+		<h2 class="font-mono text-xl font-bold ml-12 text-[#f87721] translate-y-20 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl md:translate-y-20	translate-y-0">Todo tipo de viajes a un solo click</h2>
 	</div>
 	</div>
 			
