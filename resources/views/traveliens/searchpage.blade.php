@@ -60,10 +60,10 @@
 												</div>
 											</td>
 											<td class="text-white">
-												{{$trav->formatted_starts}}
+												{{$trav->starts}}
 												<br>
 											</td>
-											<td class="text-white">{{$trav->formatted_finishes}}</td>
+											<td class="text-white">{{$trav->finishes}}</td>
 											<th class>
 												<img class="object-fill h-48 w-96 ml-10" src="{{ asset('images/' . $trav->image) }}">
 											</th>
