@@ -35,9 +35,9 @@ class DatabaseSeeder extends Seeder
         */
         
         
-        
+        /*
         $this->call([TravelSeeder::class]);
-
+*/
         $this->call([TagSeeder::class]);
 
         $this->call([RoleSeeder::class]);
