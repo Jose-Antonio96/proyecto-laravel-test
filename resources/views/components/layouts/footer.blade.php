@@ -10,7 +10,7 @@
         </div>
         
         <img class="w-0 lg:w-80" src="images/traveliens2.png" alt="logo"/>
-  <div class="m-16 flex justify-between grid grid-cols-3 grid-rows-2 gap-2">
+        <div class="m-16 flex flex-wrap justify-between">
     <a href="#!" type="button" class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
       <svg aria-hidden="true"
       focusable="false"
@@ -113,7 +113,6 @@
          </svg>
         </a>
     </div>
-  </div>
   </div>
   
 </div>
