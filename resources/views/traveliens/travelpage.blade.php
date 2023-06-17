@@ -12,8 +12,8 @@
     <p  class="text-white flex justify-center">{{$user->name}}</p>
     <p class="text-white flex justify-center">{{$travel->location}}</p>
     <p class="text-white flex justify-center">{{$travel->description}}</p>
-    <p class="text-white flex justify-center mt-2">{{$travel->starts}}</p>
-				<p class="text-white flex justify-center mt-2">{{$travel->finishes}}</p>
+    <p id="date" class="text-white flex justify-center mt-2">{{$travel->starts}}</p>
+				<p id="date" class="text-white flex justify-center mt-2">{{$travel->finishes}}</p>
     
   </div>
   <div class="card-actions justify-center m-6 ">

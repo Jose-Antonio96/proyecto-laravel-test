@@ -63,9 +63,9 @@
         <label class="block mb-1">Elige etiquetas</label>
         <div class="mb-4 grid grid-cols-4">
             @foreach($tags as $id => $tagName)
-                <ol>
+                <ol class="flex place-self-center">
                     <input type="checkbox" class="checkbox m-4" id="{{ $id }}" name="tags[]" value="{{ $id }}">
-                    <label for="{{ $id }}">{{ $tagName }}</label>
+                    <label class="translate-y-4" for="{{ $id }}">{{ $tagName }}</label>
                 </ol>
             @endforeach
         </div>
