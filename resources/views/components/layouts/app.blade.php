@@ -9,7 +9,7 @@
 </head>
 
 <body class="min-h-screen flex flex-col mb-0">
-    <main class="flex-1 pb-10">
+    <main class="flex-1 m-0">
         {{--@include('partials.navigation')--}}
         <x-layouts.header/>      
         {{$slot}}

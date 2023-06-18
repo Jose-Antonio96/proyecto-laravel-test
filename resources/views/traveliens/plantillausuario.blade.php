@@ -50,7 +50,7 @@
 				</div>
 			</div>
 			
-			<div class="grid grid-cols-2 lg:grid-cols-4  m-6 mt-20 bg-[#181818] rounded">
+			<div class="grid grid-cols-2 lg:grid-cols-3 flex justify-center m-6 mt-20 bg-[#181818] rounded">
 			
 			  <div class="m-2 p-2 flex justify-center">
 				<a class="font-yusei min-w-full  btn btn-primary bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-2 px-4 rounded-full flex justify-center text-center sm:w-64 md:w-64 lg:w-72" href="{{route ('createTravelForm') }}">Crear viajes</a>
