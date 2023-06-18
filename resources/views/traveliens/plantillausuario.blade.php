@@ -67,7 +67,7 @@
 				<a class="font-yusei min-w-full  btn btn-primary bg-[#1b9df0] hover:bg-[#f87721] text-white font-bold py-2 px-4 rounded-full flex justify-center text-center sm:w-64 md:w-64 lg:w-72" href="{{route ('userTravels') }}">Mis viajes</a>
 			   
 				</div>
-			
+			{{--
 			  <div class="m-2 p-2 flex justify-center">
 				<form  action="{{route ('account.delete', $user) }}" method="POST">
 					@csrf 
@@ -76,6 +76,7 @@
 
 				</form><br>
 				</div>
+				--}}
 			  </div>
 			</div>
 		
